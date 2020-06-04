@@ -3,7 +3,7 @@
         "parts":"Breaks",
         "price": [{"id": 1, "price": "20$"}],
         "hours": [{"id": 1,"hours":1.5}],
-        "describtion":[{"id": 1,"describtion":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"}]
+        "describtion":[{"id": 1,"describtion":"hhhhhhhhhhhhhhhhhhhhhhhhhh"}]
         }
     
         
@@ -12,17 +12,17 @@
     ,
     {
         "parts":"HandBreak",
-        "price": [{"id": 1, "price": "20$"}],
+        "price": [{"id": 1, "price": "49$"}],
         "hours": [{"id": 1,"hours":1.5}],
-        "describtion":[{"id": 1,"describtion":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"}]
+        "describtion":[{"id": 1,"describtion":"mehyaaaar yaa mehyaar"}]
 
     
     },
     {
         "parts":"Engine",
-        "price": [{"id": 1, "price": "20$"}],
+        "price": [{"id": 1, "price": "68$"}],
         "hours": [{"id": 1,"hours":1.5}],
-        "describtion":[{"id": 1,"describtion":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"}]
+        "describtion":[{"id": 1,"describtion":"bla bla blaaaaaaaaaaaaa"}]
 
     
     }
