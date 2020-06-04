@@ -13,7 +13,7 @@
     {
         "parts":"HandBreak",
         "price": [{"id": 1, "price": "49$"}],
-        "hours": [{"id": 1,"hours":1.5}],
+        "hours": [{"id": 1,"hours":3}],
         "describtion":[{"id": 1,"describtion":"mehyaaaar yaa mehyaar"}]
 
     
@@ -21,7 +21,7 @@
     {
         "parts":"Engine",
         "price": [{"id": 1, "price": "68$"}],
-        "hours": [{"id": 1,"hours":1.5}],
+        "hours": [{"id": 1,"hours":12}],
         "describtion":[{"id": 1,"describtion":"bla bla blaaaaaaaaaaaaa"}]
 
     
