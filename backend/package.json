@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./server/server.js",
@@ -14,7 +13,12 @@
     "express": "^4.17.1",
     "pg": "^8.2.1"
   },
+<<<<<<< HEAD
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
+=======
+  "devDependencies": {},
+  "description": ""
+>>>>>>> 854c035a76c3089f12a8402bd43c4da518817f4b
 }

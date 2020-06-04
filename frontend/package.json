@@ -11,7 +11,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "fs": "0.0.1-security",
+=======
+>>>>>>> 854c035a76c3089f12a8402bd43c4da518817f4b
     "react": "^16.13.1",
     "react-component": "0.0.0",
     "react-dom": "^16.13.1",
