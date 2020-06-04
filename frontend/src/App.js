@@ -8,9 +8,6 @@ import {
 import {Regist, Login, Tires,Prepurches, DiagnoseFix,Home,Header} from "./login"
 
 
-//class App extends React.Component{
-
-
 function App() {
   return (
     <div className="App">

@@ -1,6 +1,6 @@
 import React from 'react';
  import loginImg from "../login/logo.png"
- import carsale from "../services/carsale.jpg"
+ import carrepair from "../services/car-repair.png"
  import DropDown from "../components/DropDown"
  import partTable from "../data/partTable.json"
 import ValBox from '../components/ValBox';
@@ -19,7 +19,7 @@ export class DiagnoseFix extends React.Component{
         return (
           <div className="TiersPage">
             <div className="imageicon1"> 
-                <img src={carsale} className="imagebackground"/>
+                <img src={carrepair} className="imagebackground"/>
                 <img src={loginImg} className="imageicon" />
 
               </div>
@@ -33,17 +33,15 @@ export class DiagnoseFix extends React.Component{
              <div className="Dagnose">
                    <span> Working Hours</span>
                    { this.state.part &&  <ValBox data={this.state.part.hours} name="hours" onChange={onPricechange} />}
-
                     </div>
 
-                    <div className="Dagnose">
+                    <div className="Dagnose1">
                    <span> Price</span>
                    { this.state.part &&  <ValBox data={this.state.part.price} name="price" onChange={onPricechange} />}
                     </div>
 
             <div className="productdesc">
             { this.state.part &&  <ValBox data={this.state.part.describtion} name="describtion" onChange={onPricechange} />}
-
             </div>
             <button type="button" className="addcarttext" >
                ADD To Cart

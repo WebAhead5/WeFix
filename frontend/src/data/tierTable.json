@@ -1,20 +1,27 @@
 [
     {
-        "title":"Pirele",
-        "model": [{"id": 1, "name": "13"},{"id": 1, "name": "14"},{"id": 1, "name": "15"}],
-        "measure": [{"id": 1,"measure":"122/115"},{"id": 1, "measure":"122/115"},{"id": 1,"measure":"122/115"}]
-
-    },
-    {
         "title":"Michellin",
-        "model": [{"id": 1, "name": "Corolla"},{"id": 1, "name": "Yaris"},{"id": 1, "name": "aygo"}],
-        "year":[1990,1991,1992,1993]
+        "hours": [{"id": 1,"hours":1.5}],
+        "measure": [{"id": 1,"measure":"122/115/13"},{"id": 1, "measure":"122/117/14"},{"id": 1,"measure":"122/190/15"}],
+        "price": [{"id": 1,"price":200}]
+
+
+        },
+    {
+        "title":"conte",
+        "hours": [{"id": 1,"hours":1.5}],
+        "measure": [{"id": 1,"measure":"122/115"},{"id": 1, "measure":"122/115"},{"id": 1,"measure":"122/115"}],
+        "price": [{"id": 1,"price":400}]
+
     
     },
     
     {
-        "title":"Ford",
-        "model": [3,2,4]
+        "title":"Maxis",
+        "hours": [{"id": 1,"hours":1.5}],
+        "measure": [{"id": 1,"measure":"122/115"},{"id": 1, "measure":"122/115"},{"id": 1,"measure":"122/115"}],
+        "price": [{"id": 1,"price":300}]
+
     
     }
     ]
