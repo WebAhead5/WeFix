@@ -1,0 +1,22 @@
+[
+{
+    "title":"Mazda",
+    "model": [{"id": 1, "name": "3"},{"id": 1, "name": "2"},{"id": 1, "name": "Cx5"}],
+    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
+
+},
+{
+    "title":"Toyota",
+    "model": [{"id": 1, "name": "Corolla"},{"id": 1, "name": "Yaris"},{"id": 1, "name": "aygo"}],
+    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
+
+},
+
+{
+    "title":"Ford",
+    "model": [3,2,4],
+    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
+
+
+}
+]

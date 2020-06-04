@@ -1,24 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import {Regist, Login, Tires,Prepurches, DiagnoseFix} from "./login"
+
+
+//class App extends React.Component{
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+      <Router>
+      <Switch>
+
+      <Route exact path="/">
+        <a href="/login">
+          Login 
         </a>
-      </header>
+        <a href="/SignUp">
+          SignUp 
+        </a>
+        <a href="/tires">
+          Tires 
+        </a>
+        <a href="/Prepurches">
+          pre-purches 
+        </a>
+        <a href="/Diagnose">
+        Diagnose 
+        </a>
+          </Route>
+
+          <Route exact path="/Diagnose">
+            <DiagnoseFix/>
+          </Route>
+
+          <Route exact path="/login">
+            <Login/>
+          </Route>
+          <Route exact path="/Tires">
+            <Tires/>
+          </Route>
+          <Route exact path="/Prepurches">
+            <Prepurches/>
+          </Route>
+      </Switch>
+
+      </Router>
     </div>
   );
 }
