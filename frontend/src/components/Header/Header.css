@@ -1,0 +1,38 @@
+#nav {
+  width: 98%;
+  float: left;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  background-color: black;
+  margin-right: 10px;
+}
+#nav li {
+  float: right;
+  margin: 10px;
+}
+
+#nav li :hover {
+  color: #1e7be2;
+}
+
+#nav li a {
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  background-color: #1e7be2;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+button:hover {
+  background-color: #ffffff;
+}
+
+img {
+  margin-top: 5px;
+}
