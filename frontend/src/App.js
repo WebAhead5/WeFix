@@ -15,15 +15,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-<<<<<<< HEAD
-        <Switch>
-          <Route exact path="/">
-            <a href="/login">Login</a>
-            <a href="/SignUp">SignUp</a>
-            <a href="/tires">Tires</a>
-            <a href="/Prepurches">pre-purches</a>
-            <a href="/Diagnose">Diagnose</a>
-=======
       <Switch>
 
       <Route exact path="/">
@@ -46,7 +37,6 @@ function App() {
         Home 
         </a>
 
->>>>>>> 854c035a76c3089f12a8402bd43c4da518817f4b
           </Route>
 
           <Route exact path="/Diagnose">
@@ -62,9 +52,6 @@ function App() {
           <Route exact path="/Prepurches">
             <Prepurches />
           </Route>
-<<<<<<< HEAD
-        </Switch>
-=======
           <Route exact path="/Home">
           <Header/>
             <Home/>
@@ -73,7 +60,6 @@ function App() {
 
       </Switch>
 
->>>>>>> 854c035a76c3089f12a8402bd43c4da518817f4b
       </Router>
     </div>
   );
