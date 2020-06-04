@@ -1,11 +1,18 @@
 const fs = require("fs");
 const path = require("path");
-const dbConnection = require("./dbConnection.js");
 
-const sqlPath = path.join(__dirname, "dbBuild.sql");
+const dbConnection = require("./dbconnection.js");
+
+const sqlPath = path.join(__dirname, "dbbuild.sql");
 const sql = fs.readFileSync(sqlPath).toString();
 
 const runDbBuild = (cb) => dbConnection.query(sql, cb);
 
-runDbBuild();
+if (process.env.RESETDB === "true") {
+  runDbBuild((err, res) => {
+    if (err) process.exit(1);
+    process.exit(0);
+  });
+}
+
 module.exports = runDbBuild;
