@@ -2,8 +2,10 @@ import React from "react";
 import "./Home.css";
 import Pic from "../../img/bmw 1.png";
 
-function Home() {
-  return (
+export class Home extends React.Component{
+
+  render() {
+    return (
     <div>
       <img src={Pic} id="bmw-img" />
       <p>
@@ -25,5 +27,5 @@ function Home() {
     </div>
   );
 }
-
+}
 export default Home;

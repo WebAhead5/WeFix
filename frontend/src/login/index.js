@@ -1,5 +1,7 @@
 import "./style.css"
 import "./../services/Tires.css"
+ export {Header} from "../components/Header/Header"
+export {Home} from "../components/Home/Home"
 
 export {DiagnoseFix} from "../services/DiagnoseFix"
 export {Prepurches} from "../services/Prepurches"

@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../img/WeFix.svg";
 
-class Header extends React.Component {
+export class Header extends React.Component{
   render() {
     return (
       <header>

@@ -1,12 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import {Regist, Login, Tires,Prepurches, DiagnoseFix} from "./login"
+import {Regist, Login, Tires,Prepurches, DiagnoseFix,Home,Header} from "./login"
 
 
 //class App extends React.Component{
@@ -34,6 +33,10 @@ function App() {
         <a href="/Diagnose">
         Diagnose 
         </a>
+        <a href="/Home">
+        Home 
+        </a>
+
           </Route>
 
           <Route exact path="/Diagnose">
@@ -49,24 +52,15 @@ function App() {
           <Route exact path="/Prepurches">
             <Prepurches/>
           </Route>
+          <Route exact path="/Home">
+          <Header/>
+            <Home/>
+          </Route>
+
+
       </Switch>
 
       </Router>
-=======
-import "./App.css";
-import Home from "./components/Home/Home";
-import Header from "./components/Header/Header";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-
-library.add(fab);
-
-function App() {
-  return (
-    <div>
-      <Header />
-      <Home />
->>>>>>> d25ed4c89cbe4ecf268cff57901b23605e7c34fa
     </div>
   );
 }
