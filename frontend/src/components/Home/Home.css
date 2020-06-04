@@ -1,0 +1,12 @@
+p {
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  position: "absolute";
+  justify-content: center;
+  align-items: center;
+}
+
+#bmw-img {
+  width: 100%;
+}

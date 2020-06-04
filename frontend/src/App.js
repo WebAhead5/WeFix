@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Switch,
@@ -51,6 +52,21 @@ function App() {
       </Switch>
 
       </Router>
+=======
+import "./App.css";
+import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
+library.add(fab);
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <Home />
+>>>>>>> d25ed4c89cbe4ecf268cff57901b23605e7c34fa
     </div>
   );
 }
