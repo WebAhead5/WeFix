@@ -1,12 +1,18 @@
-p {
+.welcome-text {
   text-align: center;
-  margin: 30px;
-  padding: 20px;
-  position: "absolute";
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
 }
 
-#bmw-img {
+.bmw-pic {
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
