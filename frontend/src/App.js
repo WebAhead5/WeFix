@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import {Regist, Login, Tires,Prepurches, DiagnoseFix,Home,Header} from "./login"
+import {Regist, Login, Tires,Prepurches, DiagnoseFix,Home,Header,Payment,Thankmessage} from "./login"
 
 
 function App() {
@@ -33,6 +33,13 @@ function App() {
         <a href="/Home">
         Home 
         </a>
+        <a href="/payment">
+        payment 
+        </a> 
+          <a href="/thank">
+          Thankmessage 
+        </a>
+
 
           </Route>
 
@@ -53,8 +60,12 @@ function App() {
           <Header/>
             <Home/>
           </Route>
-
-
+          <Route exact path="/payment">
+            <Payment/>
+          </Route>
+          <Route exact path="/thank">
+            <Thankmessage/>
+          </Route>
       </Switch>
 
       </Router>

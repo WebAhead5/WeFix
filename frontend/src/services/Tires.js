@@ -7,7 +7,7 @@ import ValBox from '../components/ValBox';
 
 export class Tires extends React.Component{
   state = {
-    tire: {measure:[],hours:[],price:[]}
+    tire: {measure:[],hours:[],price:[],quantity:[]}
   }
 
     render() {
@@ -22,6 +22,9 @@ export class Tires extends React.Component{
                 <h1 >Tires</h1>
                 <img src={tireImg} className="imagebackground"/>
                 <img src={loginImg} className="imageicon" />
+                <button className="backbutt" >Back</button>
+
+
               </div>
               <div className="Form1">
                 <h2> Please Select Prefered Brand:</h2>
@@ -34,7 +37,7 @@ export class Tires extends React.Component{
                   <DropDown data={this.state.tire.measure} name="measure" onChange={onMeasurechange} />
             </div>     <div className="tire-details">
                 <span> Quantity:</span>
-                  <DropDown data={this.state.tire.measure} name="measure" onChange={onMeasurechange} />
+                  <DropDown data={this.state.tire.quantity} name="quantity" onChange={onMeasurechange} />
             </div>
             <span><br></br> Working Hours:</span>
                 <div className="workinghours">

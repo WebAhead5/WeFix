@@ -1,8 +1,13 @@
 import "./style.css"
 import "./../services/Tires.css"
+import "./../services/Prepurches.css"
+import"./../services/DiagnoseFix.css"
+
+
+export {Thankmessage} from "../services/Thankmessage"
  export {Header} from "../components/Header/Header"
 export {Home} from "../components/Home/Home"
-
+export {Payment} from "../services/Payment"
 export {DiagnoseFix} from "../services/DiagnoseFix"
 export {Prepurches} from "../services/Prepurches"
 export {Tires} from "../services/Tires"

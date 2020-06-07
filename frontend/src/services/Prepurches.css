@@ -53,10 +53,11 @@ border-radius: 5px;
   top: 589px;
 
   }
-  .header{
-      color:red;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+ 
+  .workinghours2{
+    height: 24px; 
+    width: 200px;
+    border: 1px solid #C1C1C1;
+    padding:10px;
+    color:red
   }
