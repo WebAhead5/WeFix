@@ -1,67 +1,50 @@
-import React from 'react';
- import loginImg from "../login/logo.png"
- import tireImg from "../services/tires.jpg"
- import DropDown from "../components/DropDown"
-import tireTable from "../data/tierTable.json"
-import ValBox from '../components/ValBox';
+import React from "react";
+import tireImg from "../services/tires.jpg";
+import DropDown from "../components/DropDown";
+import tireTable from "../data/tierTable.json";
+import ValBox from "../components/ValBox";
 
-export class Tires extends React.Component{
+export class Tires extends React.Component {
   state = {
-    tire: {measure:[],hours:[],price:[],quantity:[]}
+    tire: { measure: [], hours: [], price: [], quantity: [] },
+  };
+
+  render() {
+    const onTirechange = (tire) => this.setState({ tire });
+    const onSizechange = (model) => this.setState({ model });
+    const onMeasurechange = (measure) => this.setState({ measure });
+
+    return (
+      <div className="imageicon1">
+        <img src={tireImg} id="tire-img" />
+        <h1>Tires</h1>
+
+        <div className="Form">
+          <p> Please Select Preferred Brand:</p>
+          <div className="tire-details">
+            <span> Manufacturer</span>
+            <DropDown data={tireTable} name="title" onChange={onTirechange} />
+          </div>
+
+          <div className="car-details">
+            {
+              <DropDown
+                data={this.state.tire.measure}
+                name="measure"
+                onChange={onMeasurechange}
+              />
+            }
+          </div>
+          <div className="details-nums">
+            <p> Working hours:</p>
+            <p>Price Per Tire:</p>
+            <p>Quantity:</p>
+          </div>
+          <button type="button" className="addcarttext">
+            ADD To Cart
+          </button>
+        </div>
+      </div>
+    );
   }
-
-    render() {
-      const onTirechange = (tire) => this.setState({ tire })
-      const onSizechange=(model)=> this.setState({model})
-      const onMeasurechange=(measure)=> this.setState({measure})
-
-
-        return (
-          <div className="TiersPage">
-            <div className="imageicon1"> 
-                <h1 >Tires</h1>
-                <img src={tireImg} className="imagebackground"/>
-                <img src={loginImg} className="imageicon" />
-                <button className="backbutt" >Back</button>
-
-
-              </div>
-              <div className="Form1">
-                <h2> Please Select Prefered Brand:</h2>
-                <div className="tire-details">
-                  <span> Company:</span>
-             <DropDown data={tireTable} name="title" onChange={onTirechange} />
-                </div>
-                <div className="tire-details">
-                <span> Measure:</span>
-                  <DropDown data={this.state.tire.measure} name="measure" onChange={onMeasurechange} />
-            </div>     <div className="tire-details">
-                <span> Quantity:</span>
-                  <DropDown data={this.state.tire.quantity} name="quantity" onChange={onMeasurechange} />
-            </div>
-            <span><br></br> Working Hours:</span>
-                <div className="workinghours">
-                     <ValBox className="workinghours" data={this.state.tire.hours} name="hours" />
-                    </div>
-                    <span><br></br> Price:</span>
-                <div className="workinghours">
-                     <ValBox data={this.state.tire.price} name="price" />
-                    </div>
-
-
-
-                    <span> Product Description: </span>
-            <p className="desc"> This inspection package consists of mechanical, body & electric inspections.</p>
-            <button type="button" className="addcarttext" >
-               ADD To Cart
-            </button>
-            </div>
-    
-             </div>
-
-
-        );
-      }
-    }
-
-    export default Tires
+}

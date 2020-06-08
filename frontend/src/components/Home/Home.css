@@ -1,4 +1,29 @@
+<<<<<<< HEAD
+#wallppr {
+  background: url(../../img/bmw.jpg) -700px;
+  min-height: 859px;
+  text-align: center;
+  position: -400px;
+}
 
-#bmw-img {
-  width: 100%;
+#item {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+#pic {
+  margin: 5px;
+  align-self: center;
+}
+=======
+>>>>>>> 4f0d03db8dcb9c92d07c797d8d872e1c1d35bc2a
+
+.repair {
+  font-size: large;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.39);
 }

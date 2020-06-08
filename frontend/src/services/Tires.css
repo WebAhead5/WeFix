@@ -1,118 +1,86 @@
-.imagebackground {
-    position: absolute;
-    width: 414px;
-    height: 205px;
-    left: 0px;
-    top: 1px;
-  }
+#tire-img {
+  width: 100%;
+}
 
-.imageicon{
-    position: absolute;
-width: 123px;
-height: 53px;
-left: 16px;
-top: 8px;
+h1 {
+  text-align: center;
+  padding: 10px;
+}
 
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 45px;
-line-height: 53px;
-  }
- 
+.Form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #c1c1c1;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.productdesc {
+  width: 350px;
+  height: 123px;
+  background: #ffffff;
+  border: 2px solid #c1c1c1;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px;
+}
 
-  .Form1 {
-    position: absolute;
-    width: 350px;
-    height: 470px;
-    left: 34px;
-    top: 242px;
-    
-    background: #FFFFFF;
-    border: 1px solid #C1C1C1;
-    box-sizing: border-box;
-    border-radius: 5px;
-  }
+.tire-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .productdesc{
+.tire-details span {
+  font-weight: bold;
+}
 
-width: 308px;
-height: 123px;
-left: 56px;
-top: 490px;
+.car-details {
+  background-color: whites;
+  border-radius: 5px;
+}
 
-background: #FFFFFF;
-border: 1px solid #C1C1C1;
-box-sizing: border-box;
-border-radius: 5px;
-  }
-  .addcarttext{
-  width: 96px;
-  height: 27px;
-  left: 268px;
-  top: 589px;
+.details-nums {
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-right: 110px;
+}
 
-  } 
-  .Form {
-position: absolute;
-width: 350px;
-height: 386px;
-left: 34px;
-top: 242px;
-background: #FFFFFF;
-border: 1px solid #C1C1C1;
-box-sizing: border-box;
-border-radius: 5px;
-  }
+.addcarttext {
+  background-color: #1e55e2;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
 
+#mech-pic {
+  width: 100%;
+}
 
-  .imagebackground{
-    position: absolute;
-width: 414px;
-height: 205px;
-left: 0px;
-top: 1px;
-  }
-  .imageicon{
-    position: absolute;
-width: 123px;
-height: 53px;
-left: 16px;
-top: 8px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 45px;
-line-height: 53px;
-  }
-  .HeaderTier{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: "bold";
-    font-size: 18px;
-    line-height: 21px;
-  }
-  .workinghours{
-     height: 24px; 
-    width: 200px;
-    border: 1px solid #C1C1C1;
-    padding:10px;
+.Diagnose {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-weight: bold;
+}
 
-  }
+.Form p {
+  font-weight: bold;
+}
 
+.imgbackground {
+  width: 100%;
+}
 
-  .desc{
-    width: 300px;
-    height: 74px;
-    top: 390px;
-    background: #FFFFFF;
-    border: 1px solid #C1C1C1;
-    box-sizing: border-box;
-    border-radius: 5px;
-
-
-  } 
-
- .addcarttext{
-  float: right;
- }
+.productdesc {
+  margin: 5px;
+  padding: 10px;
+}
