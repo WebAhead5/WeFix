@@ -77,4 +77,4 @@ insert into cart (item, quantity, price,part_id,user_id) values ('HANDBREAKS',1,
 
 
 
-COMMIT
+COMMIT;
