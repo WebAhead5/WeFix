@@ -3,7 +3,7 @@ import Logo from "../../img/WeFix.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as ReactBootstrap from "react-bootstrap";
 
-export class Header extends React.Component {
+export class LoggedinHeader extends React.Component {
   render() {
     return (
       <ReactBootstrap.Navbar
@@ -18,22 +18,19 @@ export class Header extends React.Component {
         <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootstrap.Nav className="mr-auto">
-            <ReactBootstrap.Nav.Link href="/howItWorks">
-              HOW IT WORKS
+            <ReactBootstrap.Nav.Link href="/Diagnose">
+              DIAGNOSE & FIX
             </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link href="/pricing">
-              PRICING
+            <ReactBootstrap.Nav.Link href="/Tires">
+              TIRES
             </ReactBootstrap.Nav.Link>
           </ReactBootstrap.Nav>
           <ReactBootstrap.Nav>
-            <ReactBootstrap.Nav.Link href="/services">
-              SERVICES
+            <ReactBootstrap.Nav.Link href="/Prepurches">
+              PREPURCHASE INSPECTION
             </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link eventKey={2} href="/login">
-              LOGIN
-            </ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link eventKey={2} a href="/regist">
-              SIGNUP
+            <ReactBootstrap.Nav.Link eventKey={2} href="/home">
+              LOGOUT
             </ReactBootstrap.Nav.Link>
           </ReactBootstrap.Nav>
         </ReactBootstrap.Navbar.Collapse>
@@ -42,4 +39,4 @@ export class Header extends React.Component {
   }
 }
 
-export default Header;
+export default LoggedinHeader;

@@ -1,18 +1,26 @@
-.welcome-text {
+#wallppr {
+  background: url(../../img/bmw.jpg) -700px;
+  min-height: 859px;
   text-align: center;
+  position: -400px;
+}
+
+#item {
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
+  padding: 20px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.39);
 }
 
-.bmw-pic {
-  width: 100%;
+#pic {
+  margin: 5px;
+  align-self: center;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+.repair {
+  font-size: large;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.39);
 }

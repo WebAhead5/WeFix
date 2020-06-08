@@ -1,100 +1,75 @@
-
-
-
-
-@media screen and (max-width: 992px) {
-    body {
-      background-color: white;
-      color: black;
-    }
-  }
-  
-  /* On screens that are 600px wide or less, the background color is olive */
-  @media screen and (max-width: 600px) {
-    body {
-        width: 414px;
-        height: 950px;
-      background-color: white;
-      color: black;
-      position: relative;
-
-    }
-
-  }
-.base-container{
-position: relative;
-width:414px;
-height: 950px;
+.login {
+  text-align: center;
+  margin: 20px;
 }
 
-.header{
-    font-size: 24px;
-    color:#1E55E2
-}
-.content {
-display:flex;
-flex-direction: column;    
+.form-group {
+  display: flex;
+  justify-content: center;
 }
 
+input,
+.button {
+  width: 60%;
+  padding: 12px;
+  border-color: rgba(0, 255, 255, 0.363);
+  border-radius: 10px;
 
-.image{
-    width:21em;
-  
+  margin: 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
 }
 
-
-.btn{
-    border-radius: 10px;
-    color:white;
-    background-color:#1E7BE2; 
-    border: white;
-    width:373px;
-    height: 63px;
-
-
-}
-.logtext{
-    color:blue;
-    background-color:white;
-    border: white;
-
+input:hover,
+.button:hover {
+  opacity: 1;
 }
 
-.header1{
-    color:black;
+.footer {
+  text-align: center;
+  padding: 5px;
+}
+.footer p {
+  margin: 15px;
+  font-weight: bold;
 }
 
- .contact-icon {
-    background:url('/user.png');
-    height: 20px;
-    width: 20px;
-    background-size: 100%;
-    position: absolute;
-    top:0px;
-    left:0px;
-  } 
-
-  .email-icon {
-    padding: 10px;
-    background: dodgerblue;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-  }
-  .password-icon {
-    padding: 10px;
-    background: dodgerblue;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-  }
-
-.form-group{
-    max-width: 200px;
-    position: relative;
+.footer button {
+  color: white;
+  font-weight: bold;
+  background-color: #1e55e2;
 }
-.fulname{
-width:200px;
-padding-left: 30px;
 
+body {
+  height: 910px;
+}
+
+.base-container {
+  position: relative;
+  border-radius: 5px;
+  padding: 50px 0 30px 0;
+}
+
+.footer a {
+  color: #1e55e2;
+}
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.car-details {
+  text-align: center;
+  border-color: rgba(0, 0, 0, 0.445);
+  border-radius: 5px;
+  background-color: white;
+  font-size: large;
+  margin: 0;
+  padding: 5px;
 }

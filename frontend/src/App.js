@@ -9,6 +9,7 @@ import {
   Home,
   Header,
   UserDash,
+  LoggedinHeader,
 } from "./login";
 
 function App() {
@@ -27,21 +28,27 @@ function App() {
           </Route>
 
           <Route exact path="/Diagnose">
+            <LoggedinHeader />
             <DiagnoseFix />
           </Route>
           <Route exact path="/Dashboard">
+            <LoggedinHeader />
             <UserDash />
           </Route>
           <Route exact path="/login">
+            <Header />
             <Login />
           </Route>
           <Route exact path="/Regist">
+            <Header />
             <Regist />
           </Route>
           <Route exact path="/Tires">
+            <LoggedinHeader />
             <Tires />
           </Route>
           <Route exact path="/Prepurches">
+            <LoggedinHeader />
             <Prepurches />
           </Route>
           <Route exact path="/Home">

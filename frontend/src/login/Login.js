@@ -1,5 +1,5 @@
 import React from "react";
-import loginImg from "./logo.png";
+import "../login/style.css";
 
 export class Login extends React.Component {
   constructor(props) {
@@ -9,28 +9,24 @@ export class Login extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Login</div>
+        <h1 className="login">Please Login</h1>
         <div className="content">
-          <div className="image">
-            <img src={loginImg} />
-          </div>
           <div className="form">
             <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username" />
+              <input type="text" name="username" placeholder="Username" />
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
               <input type="password" name="password" placeholder="password" />
             </div>
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
+          {" "}
+          <button type="button " className="button">
             Login
           </button>
           <p> Dont have an account?</p>
-          <p>Sign Up</p>
+          <a href="/Regist">Sign Up</a>
         </div>
       </div>
     );
