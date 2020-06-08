@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Pic from "../../img/bmw.jpg";
 import Shield from "../../img/security.svg";
 import price from "../../img/coin.svg";
 import easily from "../../img/globe.svg";
