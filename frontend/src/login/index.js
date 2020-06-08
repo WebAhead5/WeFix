@@ -10,3 +10,5 @@ export { Tires } from "../services/Tires";
 export { Login } from "./Login";
 export { Regist } from "./Regist";
 export { LoggedinHeader } from "../components/LoggedinHeader/LoggedinHeader";
+export { Thankmessage } from "../services/Thankmessage";
+export { Payment } from "../services/Payment";

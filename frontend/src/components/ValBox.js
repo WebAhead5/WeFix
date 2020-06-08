@@ -14,5 +14,4 @@ class ValBox extends Component {
     });
   }
 }
-
 export default ValBox;

@@ -2,10 +2,11 @@ import React from "react";
 import tireImg from "../services/tires.jpg";
 import DropDown from "../components/DropDown";
 import tireTable from "../data/tierTable.json";
+import ValBox from "../components/ValBox";
 
 export class Tires extends React.Component {
   state = {
-    tire: "",
+    tire: { measure: [], hours: [], price: [], quantity: [] },
   };
 
   render() {
@@ -24,18 +25,15 @@ export class Tires extends React.Component {
             <span> Manufacturer</span>
             <DropDown data={tireTable} name="title" onChange={onTirechange} />
           </div>
-          <div className="tire-details">
-            <span> Dimentions</span>
-            <DropDown data={tireTable} name="title" onChange={onSizechange} />
-          </div>
+
           <div className="car-details">
-            {this.state.model && (
+            {
               <DropDown
                 data={this.state.tire.measure}
                 name="measure"
                 onChange={onMeasurechange}
               />
-            )}
+            }
           </div>
           <div className="details-nums">
             <p> Working hours:</p>
@@ -50,5 +48,3 @@ export class Tires extends React.Component {
     );
   }
 }
-
-export default Tires;

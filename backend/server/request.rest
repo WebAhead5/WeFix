@@ -1,0 +1,26 @@
+GET http://localhost:3000/users
+
+###
+
+POST  http://localhost:3000/users
+content-type: application/json
+
+{
+    "fullName": "sample3",
+    "email": "email1",
+    "password":"password",
+    "zipCode":"1111111",
+    "city":"Nazareth"
+}
+###
+POST  http://localhost:3000/cart
+content-type: application/json
+
+{
+    "item": "handbreaks",
+    "quantity":2,
+    "price":200,
+    "department":15,
+    "fullName":"amir",
+    "dateCart":"12/10/2020"
+}
