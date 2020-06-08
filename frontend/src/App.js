@@ -12,6 +12,7 @@ import {
   LoggedinHeader,
   Payment,
   Thankmessage,
+  Howitworks,
 } from "./login";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <a href="/Dashboard">Dashboard</a>
             <a href="/payment">payment </a>
             <a href="/thank">Thankmessage</a>
+            <a href="/Howitworks">Howitworks</a>
           </Route>
 
           <Route exact path="/Diagnose">
@@ -64,6 +66,10 @@ function App() {
           </Route>
           <Route exact path="/thank">
             <Thankmessage />
+          </Route>
+          <Route exact path="/Howitworks">
+            <Header />
+            <Howitworks />
           </Route>
         </Switch>
       </Router>
