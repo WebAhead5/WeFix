@@ -19,11 +19,7 @@ export class DiagnoseFix extends React.Component {
           <p> Please Select item:</p>
           <div className="tire-details">
             <span> Item</span>
-            <DropDown
-              data={partTable}
-              name="parts"
-              onChange={onPartchange}
-            />{" "}
+            <DropDown data={partTable} name="parts" onChange={onPartchange} />
           </div>
           <div className="Diagnose">
             <span> Working Hours</span>

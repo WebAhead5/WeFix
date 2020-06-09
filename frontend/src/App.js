@@ -13,6 +13,8 @@ import {
   Payment,
   Thankmessage,
   Howitworks,
+  Pricing,
+  Service,
 } from "./login";
 
 function App() {
@@ -31,8 +33,9 @@ function App() {
             <a href="/payment">payment </a>
             <a href="/thank">Thankmessage</a>
             <a href="/Howitworks">Howitworks</a>
+            <a href="/service">service</a>
+            <a href="/pricing">pricing</a>
           </Route>
-
           <Route exact path="/Diagnose">
             <LoggedinHeader />
             <DiagnoseFix />
@@ -70,6 +73,14 @@ function App() {
           <Route exact path="/Howitworks">
             <Header />
             <Howitworks />
+          </Route>{" "}
+          <Route exact path="/pricing">
+            <Header />
+            <Pricing />
+          </Route>
+          <Route exact path="/service">
+            <Header />
+            <Service />
           </Route>
         </Switch>
       </Router>

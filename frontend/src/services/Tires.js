@@ -11,8 +11,9 @@ export class Tires extends React.Component {
 
   render() {
     const onTirechange = (tire) => this.setState({ tire });
-    const onSizechange = (model) => this.setState({ model });
     const onMeasurechange = (measure) => this.setState({ measure });
+    const onPricechange = (price) => this.setState({ price });
+    const onQuantitychange = (quantity) => this.setState({ quantity });
 
     return (
       <div className="imageicon1">
@@ -36,9 +37,30 @@ export class Tires extends React.Component {
             }
           </div>
           <div className="details-nums">
-            <p> Working hours:</p>
+            <p> Working hours: </p>
+            {this.state.tire && (
+              <ValBox
+                data={this.state.tire.hours}
+                name="hours"
+                onChange={onPricechange}
+              />
+            )}
             <p>Price Per Tire:</p>
+            {this.state.tire && (
+              <ValBox
+                data={this.state.tire.price}
+                name="price"
+                onChange={onPricechange}
+              />
+            )}
             <p>Quantity:</p>
+            {this.state.tire && (
+              <DropDown
+                data={this.state.tire.quantity}
+                name="quantity"
+                onChange={onQuantitychange}
+              />
+            )}
           </div>
           <button type="button" className="addcarttext">
             ADD To Cart
@@ -47,4 +69,26 @@ export class Tires extends React.Component {
       </div>
     );
   }
+}
+
+{
+  /* 
+<span> Working Hours</span>
+{this.state.part && (
+  <ValBox
+    data={this.state.part.hours}
+    name="hours"
+    onChange={onPricechange}
+  />
+)}
+
+<span> Price</span>
+{this.state.part && (
+  <ValBox
+    data={this.state.part.price}
+    name="price"
+    onChange={onPricechange}
+  />
+)}
+</div>  */
 }
