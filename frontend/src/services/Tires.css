@@ -46,9 +46,9 @@ h1 {
 }
 
 .details-nums {
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 5px;
-  margin-right: 110px;
+  text-align: center;
 }
 
 .addcarttext {
@@ -65,11 +65,8 @@ h1 {
 }
 
 .Diagnose {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
   font-weight: bold;
+  text-align: center;
 }
 
 .Form p {
@@ -83,4 +80,15 @@ h1 {
 .productdesc {
   margin: 5px;
   padding: 10px;
+}
+
+.car-details2 {
+  border: 1px solid #c1c1c1;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.car-details2 p {
+  margin: 5px;
+  text-align: center;
 }

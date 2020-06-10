@@ -1,4 +1,6 @@
 import React from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import carTable from "../data/carTable.json";
 import DropDown from "../components/DropDown";
 
@@ -153,6 +155,10 @@ export class Regist extends React.Component {
               />
             )}
           </div>
+        </div>
+        <h1>Last Service</h1>
+        <div className="calendar-container">
+          <Calendar />
         </div>
 
             <input   type="submit" value="Submit"/>

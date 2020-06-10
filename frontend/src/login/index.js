@@ -13,3 +13,5 @@ export { LoggedinHeader } from "../components/LoggedinHeader/LoggedinHeader";
 export { Thankmessage } from "../services/Thankmessage";
 export { Payment } from "../services/Payment";
 export { Howitworks } from "../components/HowItWorks/Howitworks";
+export { Pricing } from "../components/Pricing/pricing";
+export { Service } from "../components/Service/service";

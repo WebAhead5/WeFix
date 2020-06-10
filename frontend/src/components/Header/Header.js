@@ -26,7 +26,7 @@ export class Header extends React.Component {
             </ReactBootstrap.Nav.Link>
           </ReactBootstrap.Nav>
           <ReactBootstrap.Nav>
-            <ReactBootstrap.Nav.Link href="/services">
+            <ReactBootstrap.Nav.Link href="/service">
               SERVICES
             </ReactBootstrap.Nav.Link>
             <ReactBootstrap.Nav.Link eventKey={2} href="/login">
