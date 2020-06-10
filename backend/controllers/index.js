@@ -11,10 +11,12 @@ exports.registerPage = (req, res) => {
   res.render('register', { activePage: { register: true }, error: '' });
 };
 
-
+  
 exports.handleUsers= async (req,res)=>{
   var email = req.body.email;
   var password = req.body.password;
+
+  
   try {
 
     var user = await findByUsername(email);

@@ -1,6 +1,6 @@
 import React from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+//import Calendar from "react-calendar";
+//import "react-calendar/dist/Calendar.css";
 import carTable from "../data/carTable.json";
 import DropDown from "../components/DropDown";
 
@@ -34,11 +34,14 @@ export class Regist extends React.Component {
       "model":this.state.model1.name,
       "make_year":this.state.year1.year,
       "last_service":this.state.year1.year
-
-
      })
+     
+    }).then(()=> {
+      window.location.pathname = '/Dashboard'
     });
-   };
+    };
+
+
    handleChange(event) {
         const target = event.target;
         const value = target.value;
@@ -63,8 +66,7 @@ export class Regist extends React.Component {
      this.dropChange = this.dropChange.bind(this);
      this.modelChange = this.modelChange.bind(this);
 
-    // const setFullName=(fullName)=> this.setState({fullName})
-    // const setPassword=(password)=> this.setState({password})
+
 
 
     

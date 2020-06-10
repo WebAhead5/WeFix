@@ -12,6 +12,7 @@ router.post("/addUser",addUser)
 router.post("/authenticate",handleUsers)
 router.get('/login', loginPage);
 router.get('/register', registerPage);
+//router.get('/howItWorks')
 
 
 

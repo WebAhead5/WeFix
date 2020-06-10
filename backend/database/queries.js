@@ -73,7 +73,7 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
   })
 
   }
-
+/*
   exports.addToCart = async (item,quantity,price,department,fullName,dateCart) => {
     return new Promise((resolve, reject) => {
       var array2 = [
@@ -86,6 +86,8 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
       ]
        database.query('insert into cart (item, quantity,price,department,fullName,dateCart) values ($1,$2,$3,$4,$5,$6)',array2)
        .then(() => resolve('item has been added to Cart')).catch((e) => console.log("Error in insert a item " + e))
+
+       
    
 exports.findByUsername = (email) => {
   return new Promise((resolve, reject) =>
@@ -131,4 +133,5 @@ exports.addNewUser = async (fullName, email, password, zipCode, city) => {
         reject(new Error("An error has occurred in the db, addNewUser"));
       });
   });
-};
+}
+*/

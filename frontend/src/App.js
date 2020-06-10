@@ -22,7 +22,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          
           <Route exact path="/">
+          <Header/>
+          <Home/>
             <a href="/login">Login</a>
             <a href="/Regist">SignUp</a>
             <a href="/tires">Tires</a>
@@ -36,6 +39,9 @@ function App() {
             <a href="/service">service</a>
             <a href="/pricing">pricing</a>
           </Route>
+
+         
+
           <Route exact path="/Diagnose">
             <LoggedinHeader />
             <DiagnoseFix />
