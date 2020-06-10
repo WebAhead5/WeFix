@@ -6,14 +6,45 @@ import ValBox from "../components/ValBox";
 
 export class Tires extends React.Component {
   state = {
-    tire: { measure: [], hours: [], price: [], quantity: [] },
+    model: "",
+    company: "",
+    hours: "",
+    measure: "",
+    price: "",
+    quantity: "",
   };
 
+  dropChange(statename, value) {
+    this.setState({
+      [statename]: value,
+    });
+  }
+  onHourschange = (hours) => this.setState({ hours });
+
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/login", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        company: this.state.company,
+        measure: this.state.measure,
+        quantity: this.state.quantity,
+        price: this.state.price,
+      }),
+    }).then(() => {
+      window.location.pathname = "/Dashboard";
+    });
+  }
+
   render() {
+    this.dropChange = this.dropChange.bind(this);
+
     const onTirechange = (tire) => this.setState({ tire });
     const onMeasurechange = (measure) => this.setState({ measure });
-    const onPricechange = (price) => this.setState({ price });
     const onQuantitychange = (quantity) => this.setState({ quantity });
+    const onPricechange = (price) => this.setState({ price });
+    const onHourschange = (hours) => this.setState({ hours });
 
     return (
       <div className="imageicon1">
@@ -21,74 +52,75 @@ export class Tires extends React.Component {
         <h1>Tires</h1>
 
         <div className="Form">
-          <p> Please Select Preferred Brand:</p>
-          <div className="tire-details">
-            <span> Manufacturer</span>
-            <DropDown data={tireTable} name="title" onChange={onTirechange} />
-          </div>
+          <form class="Form" onSubmit={this.handleSubmit} method="POST">
+            <p> Please Select Preferred Brand:</p>
+            <div className="car-details button">
+              <span> Manufacturer</span>
+              <DropDown
+                data={tireTable}
+                name="title"
+                statename="company"
+                value={this.state.car}
+                onChange={this.dropChange}
+              />
+            </div>
+            <span> Measure</span>
 
-          <div className="car-details">
-            {
+            <div className="car-details button">
               <DropDown
-                data={this.state.tire.measure}
+                data={this.state.company ? this.state.company.measure : []}
                 name="measure"
-                onChange={onMeasurechange}
+                statename="model1"
+                value={this.state.car}
+                onChange={this.dropChange}
               />
-            }
-          </div>
-          <div className="details-nums">
-            <p> Working hours: </p>
-            {this.state.tire && (
-              <ValBox
-                data={this.state.tire.hours}
-                name="hours"
-                onChange={onPricechange}
-              />
-            )}
-            <p>Price Per Tire:</p>
-            {this.state.tire && (
-              <ValBox
-                data={this.state.tire.price}
-                name="price"
-                onChange={onPricechange}
-              />
-            )}
-            <p>Quantity:</p>
-            {this.state.tire && (
+            </div>
+            <span> Quantity</span>
+
+            <div className="car-details button">
               <DropDown
-                data={this.state.tire.quantity}
+                data={
+                  this.state.company.quantity ? this.state.company.quantity : []
+                }
                 name="quantity"
-                onChange={onQuantitychange}
+                statename="quantity"
+                value={this.state.car}
+                onChange={this.dropChange}
               />
+            </div>
+
+            <span> Hours</span>
+
+            {this.state.company && (
+              <div className="car-details button">
+                <ValBox
+                  data={this.state.company.hours}
+                  name="hours"
+                  statename="hours"
+                  value={this.state.car}
+                  onChange={this.onHourschange}
+                />
+              </div>
             )}
-          </div>
-          <button type="button" className="addcarttext">
-            ADD To Cart
-          </button>
+
+            <span> Price Per Tire</span>
+
+            {this.state.company && (
+              <div className="car-details button">
+                <ValBox
+                  data={this.state.company.price}
+                  name="price"
+                  statename="price"
+                  value={this.state.car}
+                  onChange={this.onHourschange}
+                />
+              </div>
+            )}
+
+            <input type="submit" value="Add To Cart" />
+          </form>
         </div>
       </div>
     );
   }
-}
-
-{
-  /* 
-<span> Working Hours</span>
-{this.state.part && (
-  <ValBox
-    data={this.state.part.hours}
-    name="hours"
-    onChange={onPricechange}
-  />
-)}
-
-<span> Price</span>
-{this.state.part && (
-  <ValBox
-    data={this.state.part.price}
-    name="price"
-    onChange={onPricechange}
-  />
-)}
-</div>  */
 }

@@ -6,11 +6,32 @@ import ValBox from "../components/ValBox";
 
 export class Prepurches extends React.Component {
   state = {
-    tire: { measure: [], hours: [], price: [], describtion: [] },
+    service: "",
+    hours: "",
+    describtion: "",
   };
+  dropChange(statename, value) {
+    this.setState({
+      [statename]: value,
+    });
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:5000/login", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        service: this.state.service,
+        hours: this.state.hours,
+        describtion: this.state.describtion,
+      }),
+    }).then(() => {
+      window.location.pathname = "/Dashboard";
+    });
+  }
 
   render() {
-    const onTirechange = (tire) => this.setState({ tire });
+    this.dropChange = this.dropChange.bind(this);
 
     return (
       <div className="TiersPage">
@@ -18,40 +39,48 @@ export class Prepurches extends React.Component {
           <img src={carsale} className="imgbackground" />
         </div>
 
-        <div className="Form">
-          <div className="details-nums">
-            <span> Company:</span>
+        <form class="Form" onSubmit={this.handleSubmit} method="POST">
+          <p> Please Select Preferred Brand:</p>
+          <div className="car-details button">
+            <span> Service</span>
             <DropDown
               data={purchTable}
               name="service"
-              onChange={onTirechange}
+              statename="service"
+              value={this.state.car}
+              onChange={this.dropChange}
             />
           </div>
 
-          <span>Working Hours:</span>
-          <div className="workinghours">
-            <ValBox
-              className="workinghours"
-              data={this.state.tire.hours}
-              name="hours"
-            />
-          </div>
-          <span>Price:</span>
-          <div className="workinghours">
-            <ValBox data={this.state.tire.price} name="price" />
-          </div>
+          <span> Hours</span>
 
-          <div className="productdesc">
-            <p>
-              {" "}
-              This inspection package consists of mechanical, body And electric
-              inspections.
-            </p>
-          </div>
-          <button type="button" className="addcarttext">
-            ADD To Cart
-          </button>
-        </div>
+          {this.state.service && (
+            <div className="car-details button">
+              <ValBox
+                data={this.state.service.hours}
+                name="hours"
+                statename="hours"
+                value={this.state.car}
+                onChange={this.onHourschange}
+              />
+            </div>
+          )}
+
+          <span> Describtion</span>
+
+          {this.state.service && (
+            <div className="car-details button">
+              <ValBox
+                data={this.state.service.describtion}
+                name="describtion"
+                statename="describtion"
+                value={this.state.car}
+                onChange={this.onHourschange}
+              />
+            </div>
+          )}
+          <input type="submit" value="Add To Cart" />
+        </form>
       </div>
     );
   }

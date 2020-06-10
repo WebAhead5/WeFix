@@ -41,7 +41,7 @@ export class Regist extends React.Component {
     });
     };
 
-
+    
    handleChange(event) {
         const target = event.target;
         const value = target.value;
@@ -66,7 +66,8 @@ export class Regist extends React.Component {
      this.dropChange = this.dropChange.bind(this);
      this.modelChange = this.modelChange.bind(this);
 
-
+    // const setFullName=(fullName)=> this.setState({fullName})
+    // const setPassword=(password)=> this.setState({password})
 
 
     
@@ -137,51 +138,6 @@ export class Regist extends React.Component {
 
      ) }
 
-/*          <div className="car-details button">
-            <div className="car-details">
-              {this.state.car && (
-                <DropDown
-                  data={this.state.car.model}
-                  name="name"
-                  onChange={onModelchange}
-                />
-              )}
-            </div>
-          </div>
-          <div className="car-details">
-            {this.state.model && (
-              <DropDown
-                data={this.state.car.year}
-                name="year"
-                onChange={onYearChange}
-              />
-            )}
-          </div>
-        </div>
-        <h1>Last Service</h1>
-        <div className="calendar-container">
-          <Calendar />
-        </div>
-
-            <input   type="submit" value="Submit"/>
-
-          </form>
-        </div>
-
-      
-
-        <div className="footer">
-          <button type="button" className="button" >
-            SIGN UP
-          </button>
-        </div>
-        <div className="footer">
-          <p>Already have an account</p>
-          <a href="/login">Log in</a>
-        </div>
-      </div>
-    );
-  }
-} */}
+}
 
 export default Regist;

@@ -6,96 +6,82 @@ import mechanic from "../img/mechanic.jpeg";
 
 export class DiagnoseFix extends React.Component {
   state = {
-    part: "",
+    parts: "",
+    price: "",
+    hours: "",
+    describtion: "",
   };
+
+  handleSubmit(event) {
+    console.log(this.state.parts)
+    event.preventDefault();
+    fetch("http://localhost:5000/login", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        parts: this.state.parts,
+        price: this.state.price,
+        hours: this.state.hours,
+        describtion: this.state.describtion,
+      }),
+    }).then(() => {
+      window.location.pathname = "/Dashboard";
+    });
+  }
+
+  dropChange(statename, value) {
+    this.setState({
+      [statename]: value,
+    });
+  }
   render() {
-    const onPartchange = (part) => this.setState({ part });
-    const onPricechange = (price) => this.setState({ price });
+    this.dropChange = this.dropChange.bind(this);
 
     return (
       <div className="TiersPage">
         <img src={mechanic} id="mech-pic" />
-        <div className="Form">
+        <form class="Form" onSubmit={this.handleSubmit} method="POST">
           <p> Please Select item:</p>
           <div className="tire-details">
             <span> Item</span>
-            <DropDown data={partTable} name="parts" onChange={onPartchange} />
+            <DropDown
+              data={partTable}
+              name="parts"
+              statename="parts"
+              onChange={this.dropChange}
+            />
           </div>
-          <div className="Diagnose">
-            <span> Working Hours</span>
-            {this.state.part && (
+
+          <span> Hours</span>
+          {this.state.parts && (
+            <div className="car-details button">
               <ValBox
-                data={this.state.part.hours}
+                data={this.state.parts.hours}
                 name="hours"
-                onChange={onPricechange}
+                statename="hours"
+                value={this.state.car}
+                onChange={this.onPartchange}
               />
-            )}
+            </div>
+          )}
+          <span> Description</span>
 
-            <span> Price</span>
-            {this.state.part && (
+          {this.state.parts && (
+            <div className="car-details button">
               <ValBox
-                data={this.state.part.price}
-                name="price"
-                onChange={onPricechange}
-              />
-            )}
-          </div>
-
-          <div className="productdesc">
-            {this.state.part && (
-              <ValBox
-                data={this.state.part.describtion}
+                data={this.state.parts.describtion}
                 name="describtion"
-                onChange={onPricechange}
+                statename="describtion"
+                value={this.state.car}
+                onChange={this.onHourschange}
               />
-            )}
-          </div>
-          <button type="button" className="addcarttext">
-            ADD To Cart
-          </button>
-        </div>
+            </div>
+          )}
+          <input type="submit" value="Add To Cart" />
+        </form>
       </div>
     );
   }
 }
 
 export default DiagnoseFix;
-
-//     return (
-//       <div className="TiersPage">
-//         <div className="imageicon1">
-//             <img src={carrepair} className="imagebackground"/>
-//             <img src={loginImg} className="imageicon" />
-//             <button className="backbutt" >Back</button>
-//           </div>
-
-//           <div className="Form1">
-//             <p> Please Select item:</p>
-//             <div className="tire-details">
-//               <span> Item</span>
-//          <DropDown data={partTable} name="parts" onChange={onPartchange}
-//          /> </div>
-//                             <span> Working Hours</span>
-
-//          <div className="workinghours">
-//                { this.state.part &&  <ValBox data={this.state.part.hours} name="hours"  />}
-//                 </div>
-//                 <span> Price</span>
-//                 <div className="workinghours">
-//                { this.state.part &&  <ValBox data={this.state.part.price} name="price"  />}
-//                 </div>
-//                 <span> Product Description: </span>
-//                 <div className="desc">
-//         { this.state.part &&  <ValBox data={this.state.part.describtion} name="describtion" />}
-//         </div>
-//         <button type="button" className="addcarttext" >
-//            ADD To Cart
-//         </button>
-//          </div>
-//          </div>
-
-//     );
-//   }
-// }
-
-// export default DiagnoseFix
