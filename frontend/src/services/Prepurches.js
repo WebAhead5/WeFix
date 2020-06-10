@@ -17,7 +17,7 @@ export class Prepurches extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:5000/login", {
+    fetch(process.env.REACT_APP_API_URL + "/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

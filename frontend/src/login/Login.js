@@ -10,7 +10,7 @@ export class Login extends React.Component {
 
   handleSubmit(event){ 
     event.preventDefault();
-    fetch('http://localhost:5000/authenticate', {
+    fetch(process.env.REACT_APP_API_URL + '/authenticate', {
      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
