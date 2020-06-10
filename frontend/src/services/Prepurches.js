@@ -28,9 +28,7 @@ export class Prepurches extends React.Component {
             />
           </div>
 
-          <span>
-            <br></br> Working Hours:
-          </span>
+          <span>Working Hours:</span>
           <div className="workinghours">
             <ValBox
               className="workinghours"
@@ -38,17 +36,11 @@ export class Prepurches extends React.Component {
               name="hours"
             />
           </div>
-          <span>
-            <br></br> Price:
-          </span>
+          <span>Price:</span>
           <div className="workinghours">
             <ValBox data={this.state.tire.price} name="price" />
           </div>
 
-          <span> Product Description: </span>
-          <div className="workinghours">
-            <ValBox data={this.state.tire.describtion} name="describtion" />
-          </div>
           <div className="productdesc">
             <p>
               {" "}

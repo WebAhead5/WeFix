@@ -1,0 +1,9 @@
+.service-container ul {
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+#part-img {
+  width: 100%;
+}

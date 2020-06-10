@@ -1,6 +1,4 @@
-var database = require("./dbConnection.js")
-
-
+var database = require("./dbConnection.js");
 
 exports.findByUsername = (email) => new Promise((resolve, reject) =>
     database
@@ -90,6 +88,43 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
        .then(() => resolve('item has been added to Cart')).catch((e) => console.log("Error in insert a item " + e))
    
 
-  })
+exports.addNewCar = async (
+  manufacturer,
+  model,
+  make_year,
+  last_service,
+  fullName
+) => {
+  return new Promise((resolve, reject) => {
+    var array1 = [manufacturer, model, make_year, last_service, fullName];
+    database
+      .query(
+        "insert into cars (manufacturer, model, make_year,last_service,fullName) values ($1, $2,$3,$4,$5)",
+        [array1[0], array1[1], array1[2], array1[3], array1[4]]
+      )
+      .then(() => resolve("Car has been added"))
+      .catch((e) => console.log("Error in insert a Car " + e));
+  });
+};
 
-  }
+
+exports.addToCart = async (
+  item,
+  quantity,
+  price,
+  department,
+  fullName,
+  dateCart
+) => {
+  return new Promise((resolve, reject) => {
+    var array2 = [item, quantity, price, department, fullName, dateCart];
+    console.log(array2);
+    database
+      .query(
+        "insert into cart (item, quantity,price,department,fullName,dateCart) values ($1,$2,$3,$4,$5,$6)",
+        array2
+      )
+      .then(() => resolve("item has been added to Cart"))
+      .catch((e) => console.log("Error in insert a item " + e));
+  });
+}

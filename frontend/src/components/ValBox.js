@@ -7,9 +7,11 @@ class ValBox extends Component {
 
     return data.map((item, index) => {
       return (
-        <p value={item[name]} key={index}>
-          {item[name]}{" "}
-        </p>
+        <div className="car-details2">
+          <p value={item[name]} key={index}>
+            {item[name]}{" "}
+          </p>
+        </div>
       );
     });
   }

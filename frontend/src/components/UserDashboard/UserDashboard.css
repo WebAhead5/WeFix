@@ -1,0 +1,24 @@
+.user-data {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  box-sizing: border-box;
+}
+
+.pic-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.reservation {
+  border: 1px solid #c1c1c1;
+  box-sizing: content-box;
+  border-radius: 10px;
+  height: 100px;
+  margin: 10px;
+  padding-left: 10px;
+}
