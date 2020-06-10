@@ -2,14 +2,14 @@ var database = require("./dbConnection.js")
 
 
 
-exports.findByUsername = (email) => {
-    return new Promise((resolve, reject) =>
+exports.findByUsername = (email) => new Promise((resolve, reject) =>
     database
         .query('SELECT * FROM users WHERE email = $1', [email])
         .then((user) => {
           if (!user.rows.length) {
             reject(new Error('No user was found'));
           }
+          console.log(user.rows.length)
           resolve(user.rows[0]);
         })
         .catch((error) => {
@@ -17,14 +17,13 @@ exports.findByUsername = (email) => {
           reject(new Error('An error has occurred in the db, findByUsername'));
         })
     );
-  }
 
 
 
 
 
 
-  exports.addNewUser = async (fullName, email, password,zipCode,city) => {
+  exports.addNewUser = async (fullname, email, password,zipCode,city) => {
     return new Promise((resolve, reject) => {
       // EXISTS returns the following [ { exists: BOOLEAN } ]
       database
@@ -38,14 +37,15 @@ exports.findByUsername = (email) => {
            
           // adds the user to the db
           var array = [
-            fullName,
+            fullname,
             email,
             password,
-            zipCode,
-            city
+            city,
+            zipCode? parseInt(zipCode): 0,
           ]
+          //console.log(array)
           // adds the user to the db
-          database.query('INSERT INTO users (fullName,email,password,zipCode,city) VALUES ($1, $2,$3,$4,$5)', array)
+          database.query('insert into users (fullname, email, password,city,zip) values ($1, $2,$3,$4,$5)', array)
             .then(() => resolve('User has been added')).catch((e) => console.log("Error in insert new user " + e));
   
   
@@ -67,6 +67,7 @@ exports.findByUsername = (email) => {
         last_service,
         fullName
       ]
+
        database.query('insert into cars (manufacturer, model, make_year,last_service,fullName) values ($1, $2,$3,$4,$5)', [array1[0],array1[1],array1[2],array1[3],array1[4]])
        .then(() => resolve('Car has been added')).catch((e) => console.log("Error in insert a Car " + e))
    
@@ -85,7 +86,6 @@ exports.findByUsername = (email) => {
         fullName,
         dateCart
       ]
-      console.log(array2);
        database.query('insert into cart (item, quantity,price,department,fullName,dateCart) values ($1,$2,$3,$4,$5,$6)',array2)
        .then(() => resolve('item has been added to Cart')).catch((e) => console.log("Error in insert a item " + e))
    

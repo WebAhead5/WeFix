@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users, cars,tires,parts,cart;
 
 CREATE TABLE users (
 user_id SERIAL PRIMARY KEY,
-full_name VARCHAR(100) UNIQUE NOT NULL,
+fullname VARCHAR(100) UNIQUE NOT NULL,
 email VARCHAR(100) UNIQUE NOT NULL ,
 password VARCHAR (15) NOT NULL,
 city VARCHAR(200) NOT NULL,
@@ -15,9 +15,9 @@ CREATE TABLE cars (
 car_id SERIAL PRIMARY KEY,
 manufacturer VARCHAR(100) NOT NULL,
 model VARCHAR(100) NOT NULL,
-make_year  INTEGER NOT NULL,
-last_service DATE   NOT NULL,
-full_name VARCHAR(100) UNIQUE NOT NULL
+make_year  VARCHAR(100) NOT NULL,
+last_service VARCHAR(100)   NOT NULL,
+fullname VARCHAR(100) UNIQUE NOT NULL
 );
 
 CREATE TABLE tires(
@@ -50,9 +50,9 @@ user_id INTEGER NOT NULL
 
 
 
-insert into users (full_name, email, password,city,zip) values ('amirfahoum', 'amirfahoum@gmail.com', '123456','NAZARETH',1110);
-insert into users (full_name, email, password,city,zip) values ('moris', 'moris@gmail.com', '123456','haifa',120);
-insert into users (full_name, email, password,city,zip) values ('mehiar', 'mehiar@gmail.com', '123456','telaviv',124);
+insert into users (fullname, email, password,city,zip) values ('amirfahoum', 'amirfahoum@gmail.com', '123456','NAZARETH',1110);
+insert into users (fullname, email, password,city,zip) values ('moris', 'moris@gmail.com', '123456','haifa',120);
+insert into users (fullname, email, password,city,zip) values ('mehiar', 'mehiar@gmail.com', '123456','telaviv',124);
 
 /*
 insert into cars ( manufacturer, model, make_year,last_service,full_name) values ('Bmw', 'm3', '2020','2020-06-16','amirfahoum');
@@ -77,4 +77,4 @@ insert into cart (item, quantity, price,part_id,user_id) values ('HANDBREAKS',1,
 
 
 
-COMMIT;
+COMMIT

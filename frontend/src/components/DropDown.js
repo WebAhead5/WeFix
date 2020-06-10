@@ -4,16 +4,16 @@ import React from "react";
 class DropDown extends Component {
   render() {
     const { data, name, onChange } = this.props;
-
+    //console.log(1, this.props)
     return (
-      <select
+      <select onSelect={()=> this.props.onSelect}
         className="car-details"
         onChange={(event) => {
           const val = event.target.value;
           var data1 = data.filter(function (value) {
-            return value[name] === val;
+            return value[name].toString() === val.toString();
           });
-          onChange(data1[0]);
+          onChange(this.props.statename,data1[0]);
           console.log(data1);
         }}
       >
