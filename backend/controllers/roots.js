@@ -1,4 +1,4 @@
-const { handlerHome,addUser,addCar,addItemtoCart} = require('.');
+const { loginPage,addUser,handleUsers,addItemtoCart,registerPage} = require('.');
 
 const express= require("express")
 // const auth = require('./auth');
@@ -6,9 +6,16 @@ const express= require("express")
 
 const router=express.Router()
 
-router.get("/",handlerHome)
-router.post("/users",addUser)
-router.post("/cars",addCar)
-router.post("/cart",addItemtoCart)
+//router.get("/",handlerHome)
+//router.get("/Regist",handlerHome)
+router.post("/addUser",addUser)
+router.post("/authenticate",handleUsers)
+router.get('/login', loginPage);
+router.get('/register', registerPage);
+
+
+
+
+//router.post("/cart",addItemtoCart)
 
 module.exports =router;

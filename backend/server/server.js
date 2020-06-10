@@ -4,7 +4,9 @@ const cors = require("cors");
 
 const router = require("../controllers/roots");
 
+
 require("dotenv").config();
+
 app.use(express.json());
 app.use(cors());
 
