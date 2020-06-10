@@ -87,7 +87,6 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
        database.query('insert into cart (item, quantity,price,department,fullName,dateCart) values ($1,$2,$3,$4,$5,$6)',array2)
        .then(() => resolve('item has been added to Cart')).catch((e) => console.log("Error in insert a item " + e))
    
-=======
 exports.findByUsername = (email) => {
   return new Promise((resolve, reject) =>
     database
