@@ -19,8 +19,8 @@ export class Regist extends React.Component {
  
  async handleSubmit(event){ 
     event.preventDefault();
-   await  fetch(process.env.REACT_APP_API_URL + "login", {
-      method: 'post',
+    await fetch(process.env.REACT_APP_API_URL + "login", {
+     method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
       "fullName": this.state.firstname,
@@ -65,7 +65,9 @@ export class Regist extends React.Component {
     
        modelChange=(model)=> this.setState({model})
 
-  modelChange = (model) => this.setState({ model });
+
+
+
 
   render() {
 
@@ -73,15 +75,6 @@ export class Regist extends React.Component {
      this.handleSubmit = this.handleSubmit.bind(this);
      this.dropChange = this.dropChange.bind(this);
      this.modelChange = this.modelChange.bind(this);
-
-  
-
-
-    
-
-
-
- 
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
