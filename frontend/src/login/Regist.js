@@ -19,7 +19,7 @@ export class Regist extends React.Component {
  
  async handleSubmit(event){ 
     event.preventDefault();
-    await fetch(process.env.REACT_APP_API_URL + "/login", {
+    await fetch(process.env.REACT_APP_API_URL + "login", {
      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
@@ -106,13 +106,11 @@ export class Regist extends React.Component {
             <div className="form-group">
             <label>    password    </label>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-
             </div>
 
             <div className="form-group">
             <label>Confirm-password    </label>
             <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={this.handleChange} />
-
             </div>
 
             <div className="form-group">

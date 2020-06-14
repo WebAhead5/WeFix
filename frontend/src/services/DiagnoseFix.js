@@ -22,15 +22,15 @@ export class DiagnoseFix extends React.Component {
 
     event.preventDefault();
 
-    fetch(process.env.REACT_APP_API_URL + "/addItem", {
+    fetch(process.env.REACT_APP_API_URL + "addItem", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email:localStorage.getItem('email'),
-        //company:this.state.company,
+        company:this.state.company,
         measure: "-",
         quantity: "1",
-        //price:this.state.company[0].price,
+        price:this.state.company.price,
         department:"Diagnose&fix",
 
       }),
