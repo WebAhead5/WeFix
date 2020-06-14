@@ -12,7 +12,7 @@ app.use(cors());
 app.get("/",
 function (req, res) {
   res.send('hello world')
-})
+}) 
 app.use(router);
 
 const port = process.env.PORT || 4000;
