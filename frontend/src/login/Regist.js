@@ -70,7 +70,6 @@ export class Regist extends React.Component {
 
 
   render() {
-
      this.handleChange = this.handleChange.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);
      this.dropChange = this.dropChange.bind(this);

@@ -25,7 +25,6 @@ export class Login extends React.Component {
         console.log("gggggggggggggggggggggggg")
       }
       else {  
-       console.log( response)      
      window.location.pathname = '/Dashboard'
 }    })
     }
