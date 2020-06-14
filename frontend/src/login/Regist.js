@@ -19,7 +19,7 @@ export class Regist extends React.Component {
  
  async handleSubmit(event){ 
     event.preventDefault();
-    await fetch(process.env.REACT_APP_API_URL + "addUser", {
+    await fetch(process.env.REACT_APP_API_URL + "/addUser", {
      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
