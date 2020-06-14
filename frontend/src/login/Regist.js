@@ -1,10 +1,6 @@
 import React from "react";
-//import Calendar from "react-calendar";
-//import "react-calendar/dist/Calendar.css";
 import carTable from "../data/carTable.json";
 import DropDown from "../components/DropDown";
-
-
 
 export class Regist extends React.Component {
   state = {
@@ -23,8 +19,8 @@ export class Regist extends React.Component {
  
  async handleSubmit(event){ 
     event.preventDefault();
-     await fetch('http://localhost:4000/addUser', {
-     method: 'post',
+   await  fetch(process.env.REACT_APP_API_URL + "login", {
+      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
       "fullName": this.state.firstname,
@@ -69,6 +65,7 @@ export class Regist extends React.Component {
     
        modelChange=(model)=> this.setState({model})
 
+  modelChange = (model) => this.setState({ model });
 
   render() {
 
@@ -90,64 +87,101 @@ export class Regist extends React.Component {
       <div className="base-container" ref={this.props.containerRef}>
         <div className="reg-header">Registration Page</div>
         <div className="content">
-        <form class="login__form" onSubmit={this.handleSubmit}  method="POST">
+          <form class="login__form" onSubmit={this.handleSubmit} method="POST">
             <div className="reg-header">Please Fill your Information</div>
 
             <div className="form-group">
-              <label> Name   </label>
-            <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} />
+              <label> Name </label>
+              <input
+                type="text"
+                name="firstname"
+                value={this.state.firstname}
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="form-group">
-            <label>    Email    </label>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
+              <label> Email </label>
+              <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="form-group">
             <label>    password    </label>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
             </div>
-      
+
             <div className="form-group">
             <label>Confirm-password    </label>
             <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={this.handleChange} />
             </div>
 
             <div className="form-group">
-            <label>City   </label>
-            <input type="text" name="city" value={this.state.city} onChange={this.handleChange} />
+              <label>City </label>
+              <input
+                type="text"
+                name="city"
+                value={this.state.city}
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="form-group">
-            <label>ZIP   </label>
-            <input type="text" name="zipCode" value={this.state.zipCode} onChange={this.handleChange} />
+              <label>ZIP </label>
+              <input
+                type="text"
+                name="zipCode"
+                value={this.state.zipCode}
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="car-details">
-          <div className="reg-header"> What Car Do You Drive?</div>
-          <div className="car-details button">
-            <DropDown data={carTable} name="title" statename="company" value={this.state.car} onChange={this.dropChange} />
-          </div>
-          
-          {this.state.company && <div className="car-details button">
-          <DropDown data={this.state.company.model} name="name" statename="model1" value={this.state.car} onChange={this.dropChange} />
-          </div>} 
-          {this.state.model1 && <div className="car-details button">
-          <DropDown data={this.state.company.year} name="year" statename="year1" value={this.state.car} onChange={this.dropChange} />
-          </div>} 
-          </div>
+              <div className="reg-header"> What Car Do You Drive?</div>
+              <div className="car-details button">
+                <DropDown
+                  data={carTable}
+                  name="title"
+                  statename="company"
+                  value={this.state.car}
+                  onChange={this.dropChange}
+                />
+              </div>
 
+              {this.state.company && (
+                <div className="car-details button">
+                  <DropDown
+                    data={this.state.company.model}
+                    name="name"
+                    statename="model1"
+                    value={this.state.car}
+                    onChange={this.dropChange}
+                  />
+                </div>
+              )}
+              {this.state.model1 && (
+                <div className="car-details button">
+                  <DropDown
+                    data={this.state.company.year}
+                    name="year"
+                    statename="year1"
+                    value={this.state.car}
+                    onChange={this.dropChange}
+                  />
+                </div>
+              )}
+            </div>
 
-
-          <input type="submit" value="Submit"/>
-
-        </form>
+            <input className="button" type="submit" value="Submit" />
+          </form>
         </div>
-
-        </div>
-
-     ) }
-
+      </div>
+    );
+  }
 }
 
 export default Regist;

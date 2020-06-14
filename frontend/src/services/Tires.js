@@ -24,7 +24,7 @@ export class Tires extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:4000/addItem", {
+    fetch(process.env.REACT_APP_API_URL + "/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
