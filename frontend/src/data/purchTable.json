@@ -10,9 +10,9 @@
         },
     {
         "service":"Premium",
-        "hours": [{"id": 1,"hours":1.5}],
+        "hours": [{"id": 1,"hours":2.5}],
         "price": [{"id": 1,"price":400}],
-        "describtion": [{"id": 1,"describtion":"this is a Premiuim service"}]
+        "describtion": [{"id": 1,"describtion":"this is a Premiuim service Which includes basic+light check"}]
 
 
     

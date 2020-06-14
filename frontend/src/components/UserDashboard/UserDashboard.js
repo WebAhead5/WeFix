@@ -72,6 +72,8 @@ data:null,
             })}
           </div>
 
+          <a href="/payment" className="addcarttext">Payment</a>
+
         </div>
       </div>
     );

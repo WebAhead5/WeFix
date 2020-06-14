@@ -1,16 +1,16 @@
 [
     {
       "title": "breaks",
-      "hours": [{ "id": 1, "hours": 1.5 }],
+      "hours": [{ "id": 1, "hours": 2 }],
       "price": [{"id": 1,"price":200}],
-      "describtion": [{"id": 1,"describtion":"this is basic service"}]
+      "describtion": [{"id": 1,"describtion":"brand new breaks"}]
 
     },
     {
-        "title": "breaks1",
+        "title": "lights",
         "hours": [{ "id": 1, "hours": 1.5 }],
-        "price": [{"id": 1,"price":200}],
-        "describtion": [{"id": 1,"describtion":"this is basic service"}]
+        "price": [{"id": 1,"price":100}],
+        "describtion": [{"id": 1,"describtion":"brand new lights"}]
   
       },
   
@@ -18,14 +18,14 @@
         "title": "handbreaks",
         "hours": [{ "id": 1, "hours": 1.5 }],
         "price": [{"id": 1,"price":200}],
-        "describtion": [{"id": 1,"describtion":"this is basic service"}]
+        "describtion": [{"id": 1,"describtion":"this is brand new handbreaks"}]
   
       },
       {
         "title": "gear",
-        "hours": [{ "id": 1, "hours": 1.5 }],
-        "price": [{"id": 1,"price":200}],
-        "describtion": [{"id": 1,"describtion":"this is basic service"}]
+        "hours": [{ "id": 1, "hours": 3 }],
+        "price": [{"id": 1,"price":500}],
+        "describtion": [{"id": 1,"describtion":"this is gear service"}]
   
       }
   ]

@@ -23,9 +23,8 @@ export class Payment extends React.Component {
           <input type="text" name="name" />
           <input type="text" name="name" placeholder="Expiration date" />
           <input type="text" name="name" placeholder="CVV" />
-          <button type="button" className="addcarttext">
-            ADD To Cart
-          </button>
+          <a href="/payment" className="addcarttext">Payment</a>
+
         </div>
       </div>
     );
