@@ -17,6 +17,7 @@ export class Login extends React.Component {
         password: this.state.password,
       }),
     }).then((response)=>{
+      console.log(process.env.REACT_APP_API_URL)
       localStorage.setItem("email",this.state.email)    
 
       if(!response.ok)
