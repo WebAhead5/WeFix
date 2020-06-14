@@ -7,7 +7,7 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
           if (!user.rows.length) {
             reject(new Error('No user was found'));
           }
-          console.log(user.rows.length)
+          //var cart=getCart(email)
           resolve(user.rows[0]);
         })
         .catch((error) => {
@@ -23,6 +23,7 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
 
   exports.addNewUser = async (fullname, email, password,zipCode,city) => {
     return new Promise((resolve, reject) => {
+
       // EXISTS returns the following [ { exists: BOOLEAN } ]
       database
         .query('SELECT EXISTS(SELECT 1 FROM users WHERE email = $1)', [email])
@@ -32,7 +33,6 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
   
             return reject(new Error('User already exists in our database'));
           }
-           
           // adds the user to the db
           var array = [
             fullname,
@@ -41,7 +41,7 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
             city,
             zipCode? parseInt(zipCode): 0,
           ]
-          //console.log(array)
+          console.log(array)
           // adds the user to the db
           database.query('insert into users (fullname, email, password,city,zip) values ($1, $2,$3,$4,$5)', array)
             .then(() => resolve('User has been added')).catch((e) => console.log("Error in insert new user " + e));
@@ -71,67 +71,39 @@ exports.findByUsername = (email) => new Promise((resolve, reject) =>
    
 
   })
-
   }
-/*
-  exports.addToCart = async (item,quantity,price,department,fullName,dateCart) => {
+  exports.getCart = (email) => new Promise((resolve, reject) =>
+  database
+      .query('SELECT * FROM cart WHERE email = $1', [email])
+      .then((cart) => {
+        if (!cart.rows.length) {
+          reject(new Error('No cart was found'));
+        }
+
+        resolve(cart.rows);
+      })
+      .catch((error) => {
+        console.log(`findCart error : ${error}`);
+        reject(new Error('An error has occurred in the db, findByUsername'));
+      })
+  );
+
+
+  exports.addToCart = async (email,company,measure,price,quantity,department) => {
     return new Promise((resolve, reject) => {
       var array2 = [
-        item,
-        quantity,
+        email,
+        company,
+        measure,
         price,
-        department,
-        fullName,
-        dateCart
+        quantity,
+        department
       ]
-       database.query('insert into cart (item, quantity,price,department,fullName,dateCart) values ($1,$2,$3,$4,$5,$6)',array2)
+      database.query('insert into cart (email, company,measure,price,quantity,department) values ($1,$2,$3,$4,$5,$6)',array2)
        .then(() => resolve('item has been added to Cart')).catch((e) => console.log("Error in insert a item " + e))
 
        
    
-exports.findByUsername = (email) => {
-  return new Promise((resolve, reject) =>
-    database
-      .query("SELECT * FROM users WHERE email = $1", [email])
-      .then((user) => {
-        if (!user.rows.length) {
-          reject(new Error("No user was found"));
-        }
-        resolve(user.rows[0]);
-      })
-      .catch((error) => {
-        console.log(`findByUsername Error: ${error}`);
-        reject(new Error("An error has occurred in the db, findByUsername"));
-      })
-  );
-};
 
-exports.addNewUser = async (fullName, email, password, zipCode, city) => {
-  return new Promise((resolve, reject) => {
-    // EXISTS returns the following [ { exists: BOOLEAN } ]
-    database
-      .query("SELECT EXISTS(SELECT 1 FROM users WHERE email = $1)", [email])
-      .then((exists) => {
-        console.log(exists.rows[0].exists);
-        if (exists.rows[0].exists) {
-          return reject(new Error("User already exists in our database"));
-        }
-
-        // adds the user to the db
-        var array = [fullName, email, password, zipCode, city];
-        // adds the user to the db
-        database
-          .query(
-            "INSERT INTO users (fullName,email,password,zipCode,city) VALUES ($1, $2,$3,$4,$5)",
-            array
-          )
-          .then(() => resolve("User has been added"))
-          .catch((e) => console.log("Error in insert new user " + e));
-      })
-      .catch((error) => {
-        console.log(`addNewUser Error: ${error}`);
-        reject(new Error("An error has occurred in the db, addNewUser"));
-      });
-  });
-}
-*/
+})
+  }

@@ -14,7 +14,6 @@ class DropDown extends Component {
             return value[name].toString() === val.toString();
           });
           onChange(this.props.statename,data1[0]);
-          console.log(data1);
         }}
       >
         <option> </option>

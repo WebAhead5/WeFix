@@ -20,25 +20,36 @@ export class Tires extends React.Component {
     });
   }
   onHourschange = (hours) => this.setState({ hours });
+   onPricechange = (price) => this.setState({ price });
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch(process.env.REACT_APP_API_URL + "/login", {
+
+    fetch(process.env.REACT_APP_API_URL + "/addItem", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        email:localStorage.getItem('email'),
         company: this.state.company,
-        measure: this.state.measure,
-        quantity: this.state.quantity,
-        price: this.state.price,
+        measure: this.state.model1.measure,
+        quantity: this.state.quantity.quantity,
+        price: this.state.company.price[0].price,
+        department:"tires"
       }),
-    }).then(() => {
-      window.location.pathname = "/Dashboard";
-    });
+    }).then((response) => {
+      if(!response.ok)
+      {
+        console.log("error in adding ")
+      }
+      else {        
+     window.location.pathname = '/Dashboard'
+}    })
+   
   }
 
   render() {
     this.dropChange = this.dropChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     const onTirechange = (tire) => this.setState({ tire });
     const onMeasurechange = (measure) => this.setState({ measure });
@@ -112,12 +123,12 @@ export class Tires extends React.Component {
                   name="price"
                   statename="price"
                   value={this.state.car}
-                  onChange={this.onHourschange}
+                  onChange={this.onPricechange}
                 />
               </div>
             )}
 
-            <input type="submit" value="Add To Cart" />
+            <input type="submit" value="Add To Cart" className="addcarttext" />
           </form>
         </div>
       </div>

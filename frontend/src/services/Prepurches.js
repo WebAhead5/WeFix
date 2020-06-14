@@ -6,8 +6,9 @@ import ValBox from "../components/ValBox";
 
 export class Prepurches extends React.Component {
   state = {
-    service: "",
+    company:"",
     hours: "",
+    price:"",
     describtion: "",
   };
   dropChange(statename, value) {
@@ -15,16 +16,21 @@ export class Prepurches extends React.Component {
       [statename]: value,
     });
   }
+  onHourschange = (hours) => this.setState({ hours });
+  onPricechange = (price) => this.setState({ price });
   handleSubmit(event) {
     event.preventDefault();
-    fetch(process.env.REACT_APP_API_URL + "/login", {
+    fetch(process.env.REACT_APP_API_URL + "/addItem", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        service: this.state.service,
-        hours: this.state.hours,
-        describtion: this.state.describtion,
-      }),
+        email:localStorage.getItem('email'),
+        company:{title:"hhh"},
+        measure:"-",
+        quantity:"-",
+        price: {price:"20"},
+        department:"PrePurches",
+      })
     }).then(() => {
       window.location.pathname = "/Dashboard";
     });
@@ -32,7 +38,7 @@ export class Prepurches extends React.Component {
 
   render() {
     this.dropChange = this.dropChange.bind(this);
-
+    //this.onPricechange=this.dropChange.bind(this)
     return (
       <div className="TiersPage">
         <div className="imageicon">
@@ -47,10 +53,10 @@ export class Prepurches extends React.Component {
               data={purchTable}
               name="service"
               statename="service"
-              value={this.state.car}
               onChange={this.dropChange}
             />
           </div>
+
 
           <span> Hours</span>
 
@@ -62,6 +68,19 @@ export class Prepurches extends React.Component {
                 statename="hours"
                 value={this.state.car}
                 onChange={this.onHourschange}
+              />
+            </div>
+          )}
+                    <span> Price</span>
+
+            {this.state.service && (
+            <div className="car-details button">
+              <ValBox
+                data={this.state.service.price}
+                name="price"
+                statename="price"
+                value={this.state.car}
+                onChange={this.onPricechange}
               />
             </div>
           )}
@@ -77,7 +96,7 @@ export class Prepurches extends React.Component {
                 value={this.state.car}
                 onChange={this.onHourschange}
               />
-            </div>
+            </div> 
           )}
           <input type="submit" value="Add To Cart" />
         </form>

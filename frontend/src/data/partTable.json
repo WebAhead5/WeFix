@@ -1,29 +1,32 @@
 [
     {
-        "parts":"Breaks",
-        "price": [{"id": 1, "price": "20$"}],
-        "hours": [{"id": 1,"hours":1.5}],
-        "describtion":[{"id": 1,"describtion":"hhhhhhhhhhhhhhhhhhhhhhhhhh"}]
-        }
-    
-        
-        
+      "title": "breaks",
+      "hours": [{ "id": 1, "hours": 2 }],
+      "price": [{"id": 1,"price":200}],
+      "describtion": [{"id": 1,"describtion":"brand new breaks"}]
 
-    ,
-    {
-        "parts":"HandBreak",
-        "price": [{"id": 1, "price": "49$"}],
-        "hours": [{"id": 1,"hours":3}],
-        "describtion":[{"id": 1,"describtion":"mehyaaaar yaa mehyaar"}]
-
-    
     },
     {
-        "parts":"Engine",
-        "price": [{"id": 1, "price": "68$"}],
-        "hours": [{"id": 1,"hours":12}],
-        "describtion":[{"id": 1,"describtion":"bla bla blaaaaaaaaaaaaa"}]
-
-    
-    }
-]
+        "title": "lights",
+        "hours": [{ "id": 1, "hours": 1.5 }],
+        "price": [{"id": 1,"price":100}],
+        "describtion": [{"id": 1,"describtion":"brand new lights"}]
+  
+      },
+  
+      {
+        "title": "handbreaks",
+        "hours": [{ "id": 1, "hours": 1.5 }],
+        "price": [{"id": 1,"price":200}],
+        "describtion": [{"id": 1,"describtion":"this is brand new handbreaks"}]
+  
+      },
+      {
+        "title": "gear",
+        "hours": [{ "id": 1, "hours": 3 }],
+        "price": [{"id": 1,"price":500}],
+        "describtion": [{"id": 1,"describtion":"this is gear service"}]
+  
+      }
+  ]
+  

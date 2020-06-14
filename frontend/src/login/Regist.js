@@ -4,58 +4,77 @@ import DropDown from "../components/DropDown";
 
 export class Regist extends React.Component {
   state = {
-    company: "",
-    model: "",
-    year: "",
-    firstname: "",
-    email: "",
-    password: "",
-    city: "",
-    zipCode: "",
+    company:"",
+    model :"",
+    year:"",
+    firstname:"",
+    email:"",
+    password :"",
+    confirmpassword:"",
+    city:"",
+    zipCode:"",
   };
+    
 
-  handleSubmit(event) {
+ 
+ async handleSubmit(event){ 
     event.preventDefault();
-    fetch(process.env.REACT_APP_API_URL + "/login", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        fullName: this.state.firstname,
-        email: this.state.email,
-        password: this.state.password,
-        city: this.state.city,
-        zipCode: this.state.zipCode,
-        manufacturer: this.state.company.title,
-        model: this.state.model1.name,
-        make_year: this.state.year1.year,
-        last_service: this.state.year1.year,
-      }),
-    }).then(() => {
-      window.location.pathname = "/Dashboard";
-    });
-  }
+    await fetch(process.env.REACT_APP_API_URL + "/login", {
+     method: 'post',
+     headers: {'Content-Type':'application/json'},
+     body: JSON.stringify({
+      "fullName": this.state.firstname,
+      "email":this.state.email,
+      "password":this.state.password,
+      "confirmpassword":this.state.confirmpassword,
+      "city":this.state.city,
+      "zipCode":this.state.zipCode,
+      "manufacturer":this.state.company.title,
+      "model":this.state.model1.name,
+      "make_year":this.state.year1.year,
+      "last_service":this.state.year1.year
+     })
+     
+    }).then((response)=> {  
+      if(response.ok===false)
+      {
+        console.log("problem with with auth")
+      }else 
+{        
+     window.location.pathname = '/Dashboard'
+}    })
+    .catch((e)=> {
+      console.log(e);    })
+    };
+  
 
-  handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value,
-    });
-  }
-  dropChange(statename, value) {
-    this.setState({
-      [statename]: value,
-    });
-  }
+    
+   handleChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+          [name]: value
+        });
+      }   
+      dropChange(statename,value) {
+        this.setState({
+          [statename]: value
+        });
+      }   
+    
+       modelChange=(model)=> this.setState({model})
 
-  modelChange = (model) => this.setState({ model });
+
+
+
 
   render() {
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.dropChange = this.dropChange.bind(this);
-    this.modelChange = this.modelChange.bind(this);
+
+     this.handleChange = this.handleChange.bind(this);
+     this.handleSubmit = this.handleSubmit.bind(this);
+     this.dropChange = this.dropChange.bind(this);
+     this.modelChange = this.modelChange.bind(this);
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
@@ -85,23 +104,15 @@ export class Regist extends React.Component {
             </div>
 
             <div className="form-group">
-              <label> password </label>
-              <input
-                type="text"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
+            <label>    password    </label>
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+
             </div>
 
             <div className="form-group">
-              <label>Confirm-password </label>
-              <input
-                type="text"
-                name="confirmPas"
-                value={this.state.confirmPas}
-                onChange={this.handleChange}
-              />
+            <label>Confirm-password    </label>
+            <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={this.handleChange} />
+
             </div>
 
             <div className="form-group">

@@ -10,16 +10,24 @@ export class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     fetch(process.env.REACT_APP_API_URL + "/authenticate", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-      }),
-    }).then(() => {
-      window.location.pathname = "/Dashboard";
-    });
+     method: 'post',
+     headers: {'Content-Type':'application/json'},
+     body: JSON.stringify({
+      "email":this.state.email,
+      "password":this.state.password })
+    }).then((response)=> {    
+      localStorage.setItem("email",this.state.email)    
+ 
+      if(!response.ok)
+      {
+        console.log("gggggggggggggggggggggggg")
+      }
+      else {  
+       console.log( response)      
+     window.location.pathname = '/Dashboard'
+}    })
   }
+
 
   handleChange(event) {
     const target = event.target;
@@ -48,21 +56,23 @@ export class Login extends React.Component {
               />
             </div>
             <div className="form-group">
-              <label> password </label>
-              <input
-                type="text"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
+            <label>    password    </label>
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
             </div>
-            <input className="button" type="submit" value="Login"></input>
-          </form>
-        </div>
-        <div className="footer">
+
+            <div className="footer">
+          {" "}
+          <input className="addcarttext" type="submit" value="Login"></input>
+
+
           <p> Dont have an account?</p>
           <a href="/Regist">Sign Up</a>
         </div>
+
+
+          </form>
+        </div>
+       
       </div>
     );
   }
