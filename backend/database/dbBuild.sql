@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS users, cars,tires,parts,cart;
 
 CREATE TABLE users (
 user_id SERIAL PRIMARY KEY,
-fullname VARCHAR(100) UNIQUE NOT NULL,
+fullname VARCHAR(100)  NOT NULL,
 email VARCHAR(100) UNIQUE NOT NULL ,
-password VARCHAR (15) NOT NULL,
+password VARCHAR  NOT NULL,
 city VARCHAR(200) NOT NULL,
 zip INTEGER NOT NULL
 );
@@ -17,7 +17,7 @@ manufacturer VARCHAR(100) NOT NULL,
 model VARCHAR(100) NOT NULL,
 make_year  VARCHAR(100) NOT NULL,
 last_service VARCHAR(100)   NOT NULL,
-fullname VARCHAR(100) UNIQUE NOT NULL
+fullname VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE tires(
@@ -41,18 +41,17 @@ amount INTEGER NOT NULL
 
 CREATE TABLE cart(
 reservation_id Serial PRIMARY KEY,
-item VARCHAR(100) NOT NULL,
-quantity INTEGER NOT NULL,
-price INTEGER NOT NULL,
-part_id INTEGER NOT NULL,
-user_id INTEGER NOT NULL
+email VARCHAR NOT NULL,
+company VARCHAR NOT NULL,
+measure VARCHAR NOT NULL,
+price VARCHAR NOT NULL,
+quantity VARCHAR NOT NULL,
+department VARCHAR NOT NULL
 );
 
 
 
-insert into users (fullname, email, password,city,zip) values ('amirfahoum', 'amirfahoum@gmail.com', '123456','NAZARETH',1110);
-insert into users (fullname, email, password,city,zip) values ('moris', 'moris@gmail.com', '123456','haifa',120);
-insert into users (fullname, email, password,city,zip) values ('mehiar', 'mehiar@gmail.com', '123456','telaviv',124);
+
 
 /*
 insert into cars ( manufacturer, model, make_year,last_service,full_name) values ('Bmw', 'm3', '2020','2020-06-16','amirfahoum');
@@ -72,9 +71,9 @@ insert into parts (part_name,part_serialnumber,description,working_hours,amount)
 insert into parts (part_name,part_serialnumber,description,working_hours,amount) values ('HandBreak', 1125, 'Breaks X1',1.5,2);
 
 */
-insert into cart (item, quantity, price,part_id,user_id) values ('Breaks',2,200,110,1);
-insert into cart (item, quantity, price,part_id,user_id) values ('HANDBREAKS',1,300,112,1);
+insert into cart (email, company, measure,price,quantity,department) values ('amirfahoum@gmail.com','michleen','110/112','120','1','tires');
+insert into cart (email, company, measure,price,quantity,department) values ('amirfahoum@gmail.com','contio','110/112','120','1','tires');
 
 
 
-COMMIT
+COMMIT;
