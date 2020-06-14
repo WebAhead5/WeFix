@@ -3,39 +3,49 @@ import DropDown from "../components/DropDown";
 import partTable from "../data/partTable.json";
 import ValBox from "../components/ValBox";
 import mechanic from "../img/mechanic.jpeg";
+import tireTable from "../data/tierTable.json";
 
 export class DiagnoseFix extends React.Component {
   state = {
-    parts: "",
-    price: "",
-    hours: "",
-    describtion: "",
+     company: "",
+     hours:""
   };
-
-  handleSubmit(event) {
-    console.log(this.state.parts)
-    event.preventDefault();
-    fetch("http://localhost:5000/login", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        parts: this.state.parts,
-        price: this.state.price,
-        hours: this.state.hours,
-        describtion: this.state.describtion,
-      }),
-    }).then(() => {
-      window.location.pathname = "/Dashboard";
-    });
-  }
 
   dropChange(statename, value) {
     this.setState({
       [statename]: value,
     });
+    console.log(this.state.company.hours)
+   }
+
+  handleSubmit(event) {
+
+    event.preventDefault();
+    fetch("http://localhost:4000/addItem", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email:localStorage.getItem('email'),
+        //company:this.state.company,
+        measure: "-",
+        quantity: "1",
+        //price:this.state.company[0].price,
+        department:"Diagnose&fix",
+
+      }),
+    }).then(() => {
+
+      window.location.pathname = "/Dashboard";
+    });
   }
+  onHourchange = (hours) => this.setState({ hours });
+
+
   render() {
     this.dropChange = this.dropChange.bind(this);
+    //this.onPricechange = this.onPricechange.bind(this);
+    this.onHourchange = this.onHourchange.bind(this);
+
 
     return (
       <div className="TiersPage">
@@ -43,22 +53,39 @@ export class DiagnoseFix extends React.Component {
         <form class="Form" onSubmit={this.handleSubmit} method="POST">
           <p> Please Select item:</p>
           <div className="tire-details">
-            <span> Item</span>
-            <DropDown
-              data={partTable}
-              name="parts"
-              statename="parts"
-              onChange={this.dropChange}
-            />
+       
+          <span> Item</span>
+              <DropDown
+                data={partTable}
+                name="title"
+                statename="company"
+                value={this.state.company}
+                onChange={this.dropChange}
+              />
+     
           </div>
 
           <span> Hours</span>
-          {this.state.parts && (
+          {this.state.company && (
             <div className="car-details button">
               <ValBox
-                data={this.state.parts.hours}
+                data={this.state.company.hours}
                 name="hours"
                 statename="hours"
+                value={this.state.car}
+                onChange={this.dropChange}
+              />
+            </div>
+          )}
+
+
+             <span> Price</span>
+          {this.state.company && (
+            <div className="car-details button">
+              <ValBox
+                data={this.state.company.price}
+                name="price"
+                statename="price"
                 value={this.state.car}
                 onChange={this.onPartchange}
               />
@@ -66,10 +93,10 @@ export class DiagnoseFix extends React.Component {
           )}
           <span> Description</span>
 
-          {this.state.parts && (
+          {this.state.company && (
             <div className="car-details button">
               <ValBox
-                data={this.state.parts.describtion}
+                data={this.state.company.describtion}
                 name="describtion"
                 statename="describtion"
                 value={this.state.car}

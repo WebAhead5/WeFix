@@ -2,7 +2,6 @@
     {
         "service":"Basic",
         "hours": [{"id": 1,"hours":1.5}],
-        "measure": [{"id": 1,"measure":"122/115/13"},{"id": 1, "measure":"122/117/14"},{"id": 1,"measure":"122/190/15"}],
         "price": [{"id": 1,"price":200}],
         "describtion": [{"id": 1,"describtion":"this is basic service"}]
 
@@ -12,7 +11,6 @@
     {
         "service":"Premium",
         "hours": [{"id": 1,"hours":1.5}],
-        "measure": [{"id": 1,"measure":"122/115"},{"id": 1, "measure":"122/115"},{"id": 1,"measure":"122/115"}],
         "price": [{"id": 1,"price":400}],
         "describtion": [{"id": 1,"describtion":"this is a Premiuim service"}]
 

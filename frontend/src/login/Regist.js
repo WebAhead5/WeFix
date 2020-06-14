@@ -14,20 +14,23 @@ export class Regist extends React.Component {
     firstname:"",
     email:"",
     password :"",
+    confirmpassword:"",
     city:"",
     zipCode:"",
   };
     
-  handleSubmit(event){ 
 
+ 
+ async handleSubmit(event){ 
     event.preventDefault();
-     fetch('http://localhost:5000/login', {
+     await fetch('http://localhost:4000/addUser', {
      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
       "fullName": this.state.firstname,
       "email":this.state.email,
       "password":this.state.password,
+      "confirmpassword":this.state.confirmpassword,
       "city":this.state.city,
       "zipCode":this.state.zipCode,
       "manufacturer":this.state.company.title,
@@ -36,10 +39,18 @@ export class Regist extends React.Component {
       "last_service":this.state.year1.year
      })
      
-    }).then(()=> {
-      window.location.pathname = '/Dashboard'
-    });
+    }).then((response)=> {  
+      if(response.ok===false)
+      {
+        console.log("problem with with auth")
+      }else 
+{        
+     window.location.pathname = '/Dashboard'
+}    })
+    .catch((e)=> {
+      console.log(e);    })
     };
+  
 
     
    handleChange(event) {
@@ -66,8 +77,7 @@ export class Regist extends React.Component {
      this.dropChange = this.dropChange.bind(this);
      this.modelChange = this.modelChange.bind(this);
 
-    // const setFullName=(fullName)=> this.setState({fullName})
-    // const setPassword=(password)=> this.setState({password})
+  
 
 
     
@@ -95,12 +105,12 @@ export class Regist extends React.Component {
 
             <div className="form-group">
             <label>    password    </label>
-            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
             </div>
       
             <div className="form-group">
             <label>Confirm-password    </label>
-            <input type="text" name="confirmPas" value={this.state.confirmPas} onChange={this.handleChange} />
+            <input type="password" name="confirmpassword" value={this.state.confirmpassword} onChange={this.handleChange} />
             </div>
 
             <div className="form-group">
