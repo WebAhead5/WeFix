@@ -1,22 +1,208 @@
 [
-{
-    "title":"Mazda",
-    "model": [{"id": 1, "name": "3"},{"id": 1, "name": "2"},{"id": 1, "name": "Cx5"}],
-    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
+  {
+    "title": "Mazda",
+    "model": [
+      { "id": 1, "name": "3" },
+      { "id": 1, "name": "2" },
+      { "id": 1, "name": "Cx5" },
+      { "id": 1, "name": "Mx5" },
+      { "id": 1, "name": "6" },
+      { "id": 1, "name": "MVP" },
+      { "id": 1, "name": "Cx3" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  },
+  {
+    "title": "Toyota",
+    "model": [
+      { "id": 1, "name": "Corolla" },
+      { "id": 1, "name": "Yaris" },
+      { "id": 1, "name": "aygo" },
+      { "id": 1, "name": "Avensis" },
+      { "id": 1, "name": "GT86" },
+      { "id": 1, "name": "camry" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  },
 
-},
-{
-    "title":"Toyota",
-    "model": [{"id": 1, "name": "Corolla"},{"id": 1, "name": "Yaris"},{"id": 1, "name": "aygo"}],
-    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
-
-},
-
-{
-    "title":"Ford",
-    "model": [3,2,4],
-    "year": [{"id": 1,"year":1996},{"id": 1, "year":1994},{"id": 1, "year":2012}]
-
-
-}
+  {
+    "title": "Ford",
+    "model": [
+      { "id": 1, "name": "Focus" },
+      { "id": 1, "name": "Mustang" },
+      { "id": 1, "name": "Taurus" },
+      { "id": 1, "name": "Fiesta" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  },
+  {
+    "title": "BMW",
+    "model": [
+      { "id": 1, "name": "Series 1" },
+      { "id": 1, "name": "Series 2" },
+      { "id": 1, "name": "Series 3" },
+      { "id": 1, "name": "Series 4" },
+      { "id": 1, "name": "Series 5" },
+      { "id": 1, "name": "Series 6" },
+      { "id": 1, "name": "Series 7" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  },
+  {
+    "title": "AUDI",
+    "model": [
+      { "id": 1, "name": "A1" },
+      { "id": 1, "name": "A3" },
+      { "id": 1, "name": "A4" },
+      { "id": 1, "name": "A5" },
+      { "id": 1, "name": "A6" },
+      { "id": 1, "name": "A7" },
+      { "id": 1, "name": "A8" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  },
+  {
+    "title": "Hyundai",
+    "model": [
+      { "id": 1, "name": "i10" },
+      { "id": 1, "name": "i20" },
+      { "id": 1, "name": "i30" },
+      { "id": 1, "name": "i35" },
+      { "id": 1, "name": "i40" },
+      { "id": 1, "name": "Sonata" }
+    ],
+    "year": [
+      { "id": 1, "year": 2000 },
+      { "id": 1, "year": 2001 },
+      { "id": 1, "year": 2002 },
+      { "id": 1, "year": 2003 },
+      { "id": 1, "year": 2004 },
+      { "id": 1, "year": 2005 },
+      { "id": 1, "year": 2006 },
+      { "id": 1, "year": 2007 },
+      { "id": 1, "year": 2008 },
+      { "id": 1, "year": 2009 },
+      { "id": 1, "year": 2010 },
+      { "id": 1, "year": 2011 },
+      { "id": 1, "year": 2012 },
+      { "id": 1, "year": 2013 },
+      { "id": 1, "year": 2014 },
+      { "id": 1, "year": 2015 },
+      { "id": 1, "year": 2016 },
+      { "id": 1, "year": 2017 },
+      { "id": 1, "year": 2018 },
+      { "id": 1, "year": 2019 },
+      { "id": 1, "year": 2020 }
+    ]
+  }
 ]
