@@ -20,7 +20,7 @@ export class Prepurches extends React.Component {
   onPricechange = (price) => this.setState({ price });
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:4000/addItem", {
+    fetch(process.env.REACT_APP_API_URL + "/addItem", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

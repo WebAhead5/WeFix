@@ -2,15 +2,14 @@ import React from "react";
 import "../login/style.css";
 
 export class Login extends React.Component {
-
   state = {
-    email:"",
-    password :""
+    email: "",
+    password: "",
   };
 
-  handleSubmit(event){ 
+  handleSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:4000/authenticate', {
+    fetch(process.env.REACT_APP_API_URL + "/authenticate", {
      method: 'post',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
@@ -29,14 +28,15 @@ export class Login extends React.Component {
 }    })
   }
 
-   handleChange(event) {
+
+  handleChange(event) {
     const target = event.target;
     const value = target.value;
     const name = target.name;
     this.setState({
-      [name]: value
+      [name]: value,
     });
-  } 
+  }
   render() {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,11 +44,16 @@ export class Login extends React.Component {
     return (
       <div className="base-container" ref={this.props.containerRef}>
         <h1 className="login">Please Login</h1>
-        <div className="content">
-        <form class="login__form" onSubmit={this.handleSubmit} method="POST">
         <div className="form-group">
-            <label>    Email    </label>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
+          <form class="login-form" onSubmit={this.handleSubmit} method="POST">
+            <div className="form-group">
+              <label> Email </label>
+              <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
             </div>
             <div className="form-group">
             <label>    password    </label>
@@ -58,6 +63,7 @@ export class Login extends React.Component {
             <div className="footer">
           {" "}
           <input className="addcarttext" type="submit" value="Login"></input>
+
 
           <p> Dont have an account?</p>
           <a href="/Regist">Sign Up</a>
